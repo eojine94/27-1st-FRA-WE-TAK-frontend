@@ -1,0 +1,65 @@
+// Color
+$color-black: #262626;
+$color-dark-gray: #8E8E8E;
+$color-gray: #DBDBDB;
+$color-light-gray: #FAFAFA;
+$color-white: #fff;
+$color-blue: #0095F6;
+$color-inAction-blue: #B5D7FA;
+$color-indigo: #00376B;
+
+//Font size
+$font-micro: 12px;
+$font-small: 13px;
+$font-regular: 14px;
+$font-medium: 16px;
+$font-large: 28px;
+
+//Font weight 
+$weight-thin: 300;
+$weight-regular: 400;
+$weight-semi-bold: 600;
+$weight-bold: 700;
+
+//Font Etc
+$line-short: 16px;
+$line-regular: 18px;
+
+// Size
+$size-border-radius3: 3px;
+$size-icon-small: 22px;
+$size-icon-middle: 32px;
+$size-icon-large: 42px;
+
+//Border
+$border-gray1: 1px solid $color-gray;
+$border-darkgray1: 1px solid $color-dark-gray;
+
+//Margin
+$margin-center: 0 auto;
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexCenterColumn {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin flexSpaceBetweenCenter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin absoluteCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

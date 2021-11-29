@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Main from "./src/pages/Main/Main";
-import Login from "./src/pages/Login/Login";
-import Signup from "./src/pages/Signup/Signup";
-import List from "./src/pages/List/List";
+import Main from "./pages/Main/Main";
+import Login from "./pages/Login/Login";
+import Signup from "./pages/Signup/Signup";
+import List from "./pages/List/List";
 
 function Router() {
   return (

@@ -1,1 +1,25 @@
 @import "../../styles/variables.scss";
+
+.main {
+  .mainPage {
+    position: relative;
+    top: 70px;
+
+    .textWrapper {
+      @include flexCenter;
+      height: 385px;
+      background-color: black;
+
+      .text {
+        color: white;
+        text-align: center;
+        font-size: 100px;
+      }
+    }
+
+    .slidingWrapper {
+      padding: 0 150px;
+      font-size: 30px;
+    }
+  }
+}

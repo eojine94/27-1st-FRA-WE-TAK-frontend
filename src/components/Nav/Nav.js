@@ -1,8 +1,8 @@
-import React from "react";
-import "./Nav.scss";
+import React from 'react';
+import './Nav.scss';
 
 function Nav() {
-  return <div className="nav"></div>;
+  return <div className="nav" />;
 }
 
 export default Nav;

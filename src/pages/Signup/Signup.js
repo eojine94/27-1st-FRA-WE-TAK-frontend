@@ -1,8 +1,8 @@
-import React from "react";
-import "./Signup.scss";
+import React from 'react';
+import './Signup.scss';
 
 function Signup() {
-  return <div className="signup"></div>;
+  return <div className="signup" />;
 }
 
 export default Signup;

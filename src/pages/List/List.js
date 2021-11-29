@@ -1,8 +1,8 @@
-import React from "react";
-import "./List.scss";
+import React from 'react';
+import './List.scss';
 
 function List() {
-  return <div className="list"></div>;
+  return <div className="list" />;
 }
 
 export default List;

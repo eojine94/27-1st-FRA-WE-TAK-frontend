@@ -1,14 +1,13 @@
-FRA-WE-TAK 프로젝트
+# FRA-WE-TAK 프로젝트
 World's best eco-friendly egg recipe, FRA-WE-TAK
 
-개발기간
+## 개발기간
 : 2021/11/29~2021/12/10
 
-프론트엔드 개발자
+## 프론트엔드 개발자
 : 이나은, 오동녘어진이, 이지현
 
-적용 기술 및 구현 기능 적용 기술
-
+## 적용 기술 및 구현 기능 적용 기술
 Front-End : JavaScript, React.js, sass, React-router-dom
 Common : Git, Github, Slack, Trello
 

@@ -3,23 +3,19 @@
 .main {
   .mainPage {
     position: relative;
-    top: 70px;
+    top: 100px;
 
     .textWrapper {
       @include flexCenter;
       height: 385px;
-      background-color: black;
+      background-color: $color-black;
 
       .text {
-        color: white;
+        color: $color-white;
         text-align: center;
         font-size: 100px;
+        letter-spacing: 5px;
       }
-    }
-
-    .slidingWrapper {
-      padding: 0 150px;
-      font-size: 30px;
     }
   }
 }

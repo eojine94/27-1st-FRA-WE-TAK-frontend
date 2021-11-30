@@ -1,1 +1,25 @@
 @import "../../styles/variables.scss";
+
+.listDinosaur {
+  position: relative;
+  top: 100px;
+
+  .classificationWrapper {
+    margin: 20px 0px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+
+    .classification {
+      padding-left: 80px;
+
+      * {
+        display: inline-block;
+        font-weight: 800;
+        font-size: 15px;
+        margin-right: 5px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}

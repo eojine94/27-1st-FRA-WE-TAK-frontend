@@ -1,18 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ItemsList from '../../components/ItemsList/ItemsList';
 import './ListDinosaur.scss';
 
 function ListDinosaur() {
   return (
     <div className="listDinosaur">
-      <ul className="clssification">
-        <li>HOME</li>
-        <li>
-          {'>'}
-          {'>'}
-        </li>
-        <li>Dinosaur</li>
-      </ul>
+      <div className="classificationWrapper">
+        <ul className="classification">
+          <li>
+            <Link to="/">HOME</Link>
+          </li>
+          <li>
+            {'>'}
+            {'>'}
+          </li>
+          <li>DINOSAUR</li>
+        </ul>
+      </div>
       <ItemsList />
       <ItemsList />
       <ItemsList />

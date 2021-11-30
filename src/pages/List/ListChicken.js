@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ItemsList from '../../components/ItemsList/ItemsList';
 import './ListChicken.scss';
 
@@ -7,7 +8,9 @@ function ListChicken() {
     <div className="listChicken">
       <div className="classificationWrapper">
         <ul className="classification">
-          <li>HOME</li>
+          <li>
+            <Link to="/">HOME</Link>
+          </li>
           <li>
             {'>'}
             {'>'}

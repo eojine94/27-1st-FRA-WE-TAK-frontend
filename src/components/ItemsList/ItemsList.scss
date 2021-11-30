@@ -1,1 +1,27 @@
 @import "../../styles/variables.scss";
+
+.itemsList {
+  margin: 40px 0px;
+  padding: 10px 80px;
+
+  .categoryName {
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .categoryPrice {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 10px;
+  }
+
+  .imageWrapper {
+    margin-top: 20px;
+
+    .itemsImage {
+      width: 200px;
+      height: 200px;
+      margin: 10px 5px 10px 0px;
+    }
+  }
+}

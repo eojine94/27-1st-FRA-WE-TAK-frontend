@@ -11,13 +11,14 @@
     align-items: center;
 
     .classification {
-      padding-left: 50px;
+      padding-left: 80px;
 
       * {
         display: inline-block;
-        font-weight: 700;
-        font-size: 14px;
+        font-weight: 800;
+        font-size: 15px;
         margin-right: 5px;
+        letter-spacing: 1px;
       }
     }
   }

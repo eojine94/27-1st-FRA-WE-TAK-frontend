@@ -4,17 +4,20 @@ import './Nav.scss';
 function Nav() {
   return (
     <div className="nav">
-      <div className="nav_title">Freitak</div>
+      <div className="nav_title">
+        <span className="green_color">Frei</span>tak
+        <span className="green_color">.</span>
+      </div>
       <ul className="nav_menu">
-        <li className="shop_menu">샵</li>
+        <li className="shop_menu">shop</li>
         <li className="egg_logo">
           <img
             className="egg_logo_img"
-            src="../image/logo.png"
+            src="../image/egg_character2.jpg"
             alt="egg_logo"
           />
         </li>
-        <li className="recipe_menu">레시피</li>
+        <li className="recipe_menu">recipe</li>
       </ul>
       <ul className="nav_icon">
         <li className="user_icon">

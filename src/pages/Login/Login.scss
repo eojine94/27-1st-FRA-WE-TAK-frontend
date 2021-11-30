@@ -1,1 +1,65 @@
-@import "../../styles/variables.scss";
+@import '../../styles/variables.scss';
+
+.Login {
+  display: flex;
+  flex-direction: column;
+  margin: 200px 0 0 50px;
+
+  .loginTop {
+    margin-bottom: 50px;
+    width: 1000px;
+
+    .loginTitle {
+      margin-bottom: 20px;
+      font-size: 70px;
+    }
+  }
+
+  .loginMiddle {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+
+    .loginInputMessage {
+      font-size: 15px;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+
+    .email,
+    .password {
+      margin: 20px 0 30px 0;
+      width: 350px;
+      border-bottom: 2px solid black;
+    }
+
+    .forgotPassword {
+      margin-top: 25px;
+      font-size: 17px;
+      letter-spacing: 1px;
+    }
+  }
+
+  .loginBottom {
+    display: flex;
+    flex-direction: column;
+
+    .loginButton {
+      width: 120px;
+      height: 50px;
+      background-color: black;
+      color: white;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .join {
+      margin-top: 25px;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .line {
+    background-color: #adc088;
+  }
+}

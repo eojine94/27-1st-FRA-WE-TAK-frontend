@@ -16,28 +16,28 @@ function SignUp() {
           <form className="signUpInput">
             <div className="nameInput">
               <div className="inputMessage">Name *</div>
-              <input className="name"></input>
+              <input className="name" />
             </div>
             <div className="emailInput">
               <div className="inputMessage">Email(ID) *</div>
-              <input className="email"></input>
+              <input className="email" />
             </div>
             <div className="passwordInput">
               <div className="inputMessage">Password *</div>
-              <input className="password"></input>
+              <input className="password" />
             </div>
             <div className="contactInput">
               <div className="inputMessage">Phone Number *</div>
-              <input className="contact"></input>
+              <input className="contact" />
             </div>
             <div className="addressInput">
               <div className="inputMessage">Address *</div>
-              <input className="address"></input>
+              <input className="address" />
             </div>
           </form>
           <div className="agreeCheckbox">
             <div className="accountCheckboxAgreePolicy">
-              <input type="checkbox" className="checkbox"></input>
+              <input type="checkbox" className="checkbox" />
               <span className="checkboxContent">
                 I agree to the
                 <span className="line">
@@ -47,7 +47,7 @@ function SignUp() {
               </span>
             </div>
             <div className="accountCheckboxAgreeNewsLetter">
-              <input type="checkbox" className="checkbox"></input>
+              <input type="checkbox" className="checkbox" />
               <span className="checkboxContent">
                 I would like to receive you newsletter
               </span>

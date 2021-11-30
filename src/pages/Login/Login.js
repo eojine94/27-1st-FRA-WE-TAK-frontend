@@ -12,11 +12,11 @@ function Login() {
           <form className="loginInput">
             <div className="emailInput">
               <div className="loginInputMassage">Email address *</div>
-              <input className="email"></input>
+              <input className="email" />
             </div>
             <div className="passwordInput">
               <div className="loginInputMassage">Password *</div>
-              <input className="password"></input>
+              <input className="password" />
             </div>
             <span className="forgotPassword line">Forgot your password?</span>
           </form>

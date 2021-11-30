@@ -13,49 +13,43 @@
   letter-spacing: 1px;
   z-index: 1000;
 
-  .nav_title {
+  .navTitle {
     font-size: 35px;
 
-    .green_color {
+    .greenColor {
       color: green;
     }
   }
 
-  .nav_menu {
+  .navMenu {
     @include flexCenter;
     font-size: 23px;
 
-    .chicken_menu:hover,
-    .dinosaur_menu:hover {
+    .menu:hover {
       color: green;
       cursor: pointer;
       border-radius: 5px;
     }
 
-    .chicken_menu,
-    .egg_logo,
-    .dinosaur_menu {
-      margin-left: 80px;
-      margin-right: 80px;
+    .menu,
+    .eggLogo {
+      margin: 0 80px 0 80px;
       padding: 10px;
     }
 
-    .egg_logo_img {
+    .eggLogoImg {
       width: 75px;
       height: 85px;
     }
   }
 
-  .nav_icon {
+  .navIcon {
     @include flexCenter;
     color: #363636;
     font-size: 22px;
 
-    .user_icon,
-    .shopping_cart_icon,
-    .search_icon {
-      margin-left: 20px;
-      margin-right: 20px;
+    .icon {
+      margin: 0 20px 0 20px;
     }
   }
 }

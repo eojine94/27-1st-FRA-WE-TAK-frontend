@@ -5,8 +5,8 @@ import './Nav.scss';
 function Nav() {
   const [cart, setCart] = useState(false);
 
-  function onClickCart() {
-    setCart(!cart);
+  function mouseEnterCartIcon() {
+    setCart(true);
   }
 
   return (
@@ -31,7 +31,7 @@ function Nav() {
           <li className="icon">
             <i className="fas fa-user" />
           </li>
-          <li className="icon" onClick={onClickCart}>
+          <li className="icon" onMouseEnter={mouseEnterCartIcon}>
             <i className="fas fa-shopping-cart" />
           </li>
           <li className="icon">
@@ -39,7 +39,7 @@ function Nav() {
           </li>
         </ul>
       </div>
-      {cart === true ? <Cart /> : null}
+      {cart === true ? <Cart cart={cart} setCart={setCart} /> : null}
     </>
   );
 }

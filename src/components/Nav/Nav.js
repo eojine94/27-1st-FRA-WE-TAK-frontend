@@ -9,7 +9,7 @@ function Nav() {
         <span className="green_color">.</span>
       </div>
       <ul className="nav_menu">
-        <li className="shop_menu">shop</li>
+        <li className="chicken_menu">CHICKEN</li>
         <li className="egg_logo">
           <img
             className="egg_logo_img"
@@ -17,7 +17,7 @@ function Nav() {
             alt="egg_logo"
           />
         </li>
-        <li className="recipe_menu">recipe</li>
+        <li className="dinosaur_menu">DINOSAUR</li>
       </ul>
       <ul className="nav_icon">
         <li className="user_icon">

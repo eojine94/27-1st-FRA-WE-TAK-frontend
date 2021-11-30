@@ -25,16 +25,16 @@
     @include flexCenter;
     font-size: 23px;
 
-    .shop_menu:hover,
-    .recipe_menu:hover {
+    .chicken_menu:hover,
+    .dinosaur_menu:hover {
       color: green;
       cursor: pointer;
       border-radius: 5px;
     }
 
-    .shop_menu,
+    .chicken_menu,
     .egg_logo,
-    .recipe_menu {
+    .dinosaur_menu {
       margin-left: 80px;
       margin-right: 80px;
       padding: 10px;

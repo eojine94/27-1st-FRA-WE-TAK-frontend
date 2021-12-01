@@ -1,13 +1,9 @@
 import React from 'react';
 import './Cart.scss';
 
-function Cart(props) {
-  function mouseLeaveCart() {
-    props.setCart(props.Cart);
-  }
-
+function Cart({ closeCartMenu }) {
   return (
-    <div className="cart" onMouseLeave={mouseLeaveCart}>
+    <div className="cart" onMouseLeave={closeCartMenu}>
       <h2 className="cartListTitle">Cart List</h2>
       <ul className="cartDetail">
         <li className="itemPhoto">photo</li>

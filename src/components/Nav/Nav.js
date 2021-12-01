@@ -3,11 +3,15 @@ import Cart from '../Cart/Cart';
 import './Nav.scss';
 
 function Nav() {
-  const [cart, setCart] = useState(false);
+  const [cartLayout, setCartLayout] = useState(false);
 
-  function mouseEnterCartIcon() {
-    setCart(true);
-  }
+  const openCartMenu = () => {
+    setCartLayout(true);
+  };
+
+  const closeCartMenu = () => {
+    setCartLayout(false);
+  };
 
   return (
     <>
@@ -31,7 +35,7 @@ function Nav() {
           <li className="icon">
             <i className="fas fa-user" />
           </li>
-          <li className="icon" onMouseEnter={mouseEnterCartIcon}>
+          <li className="icon" onMouseEnter={openCartMenu}>
             <i className="fas fa-shopping-cart" />
           </li>
           <li className="icon">
@@ -39,7 +43,7 @@ function Nav() {
           </li>
         </ul>
       </div>
-      {cart === true ? <Cart cart={cart} setCart={setCart} /> : null}
+      {cartLayout && <Cart closeCartMenu={closeCartMenu} />}
     </>
   );
 }

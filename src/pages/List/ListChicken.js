@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ItemsList from '../../components/ItemsList/ItemsList';
 import './ListChicken.scss';
@@ -6,9 +6,11 @@ import './ListChicken.scss';
 function ListChicken() {
   const [chickenCategoryList, setChickenCategoryList] = useState([]);
 
-  fetch('/data/chickenCategoryListData.json', { method: 'GET' })
-    .then(res => res.json())
-    .then(data => setChickenCategoryList(data));
+  useEffect(() => {
+    fetch('/data/chickenCategoryListData.json', { method: 'GET' })
+      .then(res => res.json())
+      .then(data => setChickenCategoryList(data));
+  });
 
   return (
     <div className="listChicken">

@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ItemsList from '../../components/ItemsList/ItemsList';
 import './ListDinosaur.scss';
 
 function ListDinosaur() {
-  const [categoryList, setCategoryList] = useState([]);
+  const [dinosaurCategoryList, setDinosaurCategoryList] = useState([]);
 
-  fetch('/data/dinosaurCategoryListData.json', {
-    method: 'GET',
-  })
-    .then(res => res.json())
-    .then(data => setCategoryList(data));
+  useEffect(() => {
+    fetch('/data/dinosaurCategoryListData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => setDinosaurCategoryList(data));
+  });
 
   return (
     <div className="listDinosaur">
@@ -28,7 +30,7 @@ function ListDinosaur() {
           </li>
         </ul>
       </div>
-      {categoryList.map(ctgr => {
+      {dinosaurCategoryList.map(ctgr => {
         return (
           <ItemsList
             key={ctgr.id}

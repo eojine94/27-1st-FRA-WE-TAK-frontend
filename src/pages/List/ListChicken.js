@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ItemsList from '../../components/ItemsList/ItemsList';
 import './ListChicken.scss';
 
 function ListChicken() {
+  const [chickenCategoryList, setChickenCategoryList] = useState([]);
+
+  fetch('/data/chickenCategoryListData.json', { method: 'GET' })
+    .then(res => res.json())
+    .then(data => setChickenCategoryList(data));
+
   return (
     <div className="listChicken">
       <div className="classificationWrapper">
@@ -15,13 +21,20 @@ function ListChicken() {
             {'>'}
             {'>'}
           </li>
-          <li>CHICKEN</li>
+          <li>
+            <Link to="/list-chicken">CHICKEN</Link>
+          </li>
         </ul>
       </div>
-      <ItemsList />
-      <ItemsList />
-      <ItemsList />
-      <ItemsList />
+      {chickenCategoryList.map(ctgr => {
+        return (
+          <ItemsList
+            key={ctgr.id}
+            category={ctgr.category}
+            price={ctgr.price}
+          />
+        );
+      })}
     </div>
   );
 }

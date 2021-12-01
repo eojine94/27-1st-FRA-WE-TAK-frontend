@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ItemsList from '../../components/ItemsList/ItemsList';
 import './ListDinosaur.scss';
 
 function ListDinosaur() {
+  const [categoryList, setCategoryList] = useState([]);
+
+  fetch('/data/dinosaurCategoryListData.json', {
+    method: 'GET',
+  })
+    .then(res => res.json())
+    .then(data => setCategoryList(data));
+
   return (
     <div className="listDinosaur">
       <div className="classificationWrapper">
@@ -15,13 +23,20 @@ function ListDinosaur() {
             {'>'}
             {'>'}
           </li>
-          <li>DINOSAUR</li>
+          <li>
+            <Link to="/list-dinosaur">DINOSAUR</Link>
+          </li>
         </ul>
       </div>
-      <ItemsList />
-      <ItemsList />
-      <ItemsList />
-      <ItemsList />;
+      {categoryList.map(ctgr => {
+        return (
+          <ItemsList
+            key={ctgr.id}
+            category={ctgr.category}
+            price={ctgr.price}
+          />
+        );
+      })}
     </div>
   );
 }

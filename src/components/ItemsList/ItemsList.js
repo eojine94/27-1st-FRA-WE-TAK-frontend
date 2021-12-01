@@ -1,104 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ItemsList.scss';
 
-function ItemsList() {
+function ItemsList({ category, price }) {
+  const [itemsList, setItemsList] = useState([]);
+
+  const makeSymbolPrice = price => {
+    const stringPrice = price.toString();
+    const lastStringPrice = stringPrice.slice(-3);
+    const firstStringPrice = stringPrice.slice(0, -3);
+    return `₩ ${firstStringPrice},${lastStringPrice}`;
+  };
+
+  fetch('/data/itemListData.json', {
+    method: 'GET',
+  })
+    .then(res => res.json())
+    .then(data => setItemsList(data));
+
   return (
     <div className="itemsList">
-      <h2 className="categoryName">category</h2>
-      <h4 className="categoryPrice">price</h4>
+      <h2 className="categoryName">{category}</h2>
+      <h4 className="categoryPrice">{makeSymbolPrice(price)}</h4>
       <div className="imageWrapper">
-        <Link to="/list-chicken">
-          <img
-            className="itemsImage"
-            src="https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2020-02-How-To-Hard-Boiled-Egg%2FHT-Hard-Boiled-Egg_065"
-            alt=""
-          />
-        </Link>
-        <Link to="/list-chicken">
-          <img
-            className="itemsImage"
-            src="https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2020-02-How-To-Hard-Boiled-Egg%2FHT-Hard-Boiled-Egg_065"
-            alt=""
-          />
-        </Link>
-        <Link to="/list-chicken">
-          <img
-            className="itemsImage"
-            src="https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2020-02-How-To-Hard-Boiled-Egg%2FHT-Hard-Boiled-Egg_065"
-            alt=""
-          />
-        </Link>
-        <Link to="/list-chicken">
-          <img
-            className="itemsImage"
-            src="https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2020-02-How-To-Hard-Boiled-Egg%2FHT-Hard-Boiled-Egg_065"
-            alt=""
-          />
-        </Link>
-        <Link to="/list-chicken">
-          <img
-            className="itemsImage"
-            src="https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2020-02-How-To-Hard-Boiled-Egg%2FHT-Hard-Boiled-Egg_065"
-            alt=""
-          />
-        </Link>
-        <Link to="/list-chicken">
-          <img
-            className="itemsImage"
-            src="https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2020-02-How-To-Hard-Boiled-Egg%2FHT-Hard-Boiled-Egg_065"
-            alt=""
-          />
-        </Link>
-        <Link to="/list-chicken">
-          <img
-            className="itemsImage"
-            src="https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2020-02-How-To-Hard-Boiled-Egg%2FHT-Hard-Boiled-Egg_065"
-            alt=""
-          />
-        </Link>
-        <Link to="/list-chicken">
-          <img
-            className="itemsImage"
-            src="https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2020-02-How-To-Hard-Boiled-Egg%2FHT-Hard-Boiled-Egg_065"
-            alt=""
-          />
-        </Link>
-        <Link to="/list-chicken">
-          <img
-            className="itemsImage"
-            src="https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2020-02-How-To-Hard-Boiled-Egg%2FHT-Hard-Boiled-Egg_065"
-            alt=""
-          />
-        </Link>
-        <Link to="/list-chicken">
-          <img
-            className="itemsImage"
-            src="https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2020-02-How-To-Hard-Boiled-Egg%2FHT-Hard-Boiled-Egg_065"
-            alt=""
-          />
-        </Link>
-        <Link to="/list-chicken">
-          <img
-            className="itemsImage"
-            src="https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2020-02-How-To-Hard-Boiled-Egg%2FHT-Hard-Boiled-Egg_065"
-            alt=""
-          />
-        </Link>
-        <Link to="/list-chicken">
-          <img
-            className="itemsImage"
-            src="https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2020-02-How-To-Hard-Boiled-Egg%2FHT-Hard-Boiled-Egg_065"
-            alt=""
-          />
-        </Link>
-        <Link to="/list-chicken">
-          <img
-            className="itemsImage"
-            src="https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2020-02-How-To-Hard-Boiled-Egg%2FHT-Hard-Boiled-Egg_065"
-            alt=""
-          />
-        </Link>
+        {itemsList.map(item => {
+          return (
+            <Link to="/list-chicken" key={item.id}>
+              <img className="itemsImage" src={item.image_src} alt="" />
+            </Link>
+          );
+        })}
+        {itemsList.map(item => {
+          return (
+            <Link to="/list-chicken" key={item.id}>
+              <img className="itemsImage" src={item.image_src} alt="" />
+            </Link>
+          );
+        })}
+        {itemsList.map(item => {
+          return (
+            <Link to="/list-chicken" key={item.id}>
+              <img className="itemsImage" src={item.image_src} alt="" />
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

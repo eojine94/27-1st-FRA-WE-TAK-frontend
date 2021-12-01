@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ItemsList from '../../components/ItemsList/ItemsList';
-import './ListDinosaur.scss';
+import './List.scss';
 
-function ListDinosaur() {
-  const [dinosaurCategoryList, setDinosaurCategoryList] = useState([]);
+function List({ productName }) {
+  const [categoryList, setCategoryList] = useState([]);
 
   useEffect(() => {
-    fetch('/data/dinosaurCategoryListData.json', {
-      method: 'GET',
-    })
+    fetch(`/data/${productName}CategoryListData.json`, { method: 'GET' })
       .then(res => res.json())
-      .then(data => setDinosaurCategoryList(data));
-  });
+      .then(data => setCategoryList(data));
+  }, [productName]);
 
   return (
-    <div className="listDinosaur">
+    <div className="list">
       <div className="classificationWrapper">
         <ul className="classification">
           <li>
@@ -26,11 +24,11 @@ function ListDinosaur() {
             {'>'}
           </li>
           <li>
-            <Link to="/list-dinosaur">DINOSAUR</Link>
+            <Link to={`/list-${productName}`}>{productName.toUpperCase()}</Link>
           </li>
         </ul>
       </div>
-      {dinosaurCategoryList.map(ctgr => {
+      {categoryList.map(ctgr => {
         return (
           <ItemsList
             key={ctgr.id}
@@ -43,4 +41,4 @@ function ListDinosaur() {
   );
 }
 
-export default ListDinosaur;
+export default List;

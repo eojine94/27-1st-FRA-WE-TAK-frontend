@@ -1,17 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import makeSymbolPrice from '../../utils';
 import './ItemsList.scss';
 
 function ItemsList({ category, price }) {
   const [itemsList, setItemsList] = useState([]);
   const repeatingNumber = 3;
-
-  const makeSymbolPrice = price => {
-    const stringPrice = price.toString();
-    const lastStringPrice = stringPrice.slice(-3);
-    const firstStringPrice = stringPrice.slice(0, -3);
-    return `₩ ${firstStringPrice},${lastStringPrice}`;
-  };
 
   useEffect(() => {
     fetch('/data/itemListData.json', {
@@ -19,7 +13,7 @@ function ItemsList({ category, price }) {
     })
       .then(res => res.json())
       .then(data => setItemsList(data));
-  });
+  }, []);
 
   return (
     <div className="itemsList">
@@ -29,8 +23,12 @@ function ItemsList({ category, price }) {
         {[...Array(repeatingNumber)].map(() =>
           itemsList.map(item => {
             return (
-              <Link to="/list-chicken" key={item.id}>
-                <img className="itemsImage" src={item.image_src} alt="" />
+              <Link to={`/list-${category}`} key={item.id}>
+                <img
+                  className="itemsImage"
+                  src={item.image_src}
+                  alt={item.name}
+                />
               </Link>
             );
           })

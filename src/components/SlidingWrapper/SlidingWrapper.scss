@@ -1,0 +1,19 @@
+@import "../../styles/variables.scss";
+
+
+.slidingWrapper {
+  padding: 20px;
+  font-size: 30px;
+
+  .categoryName {
+    padding-left: 20px;
+    font-weight: $weight-bold;
+  }
+
+  .slidingProducts {
+    height: 300px;
+    margin-top: 20px;
+    border: $border-darkgray1;
+    border-radius: 5px;
+  }
+}

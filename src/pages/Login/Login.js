@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 import './Login.scss';
 
 function Login() {
-  // const [emailValue, setEmailValue] = useState('');
-  // const [passwordValue, setPasswordValue] = useState('');
-
   const [inputValue, setInputValue] = useState({
     email: '',
     password: '',

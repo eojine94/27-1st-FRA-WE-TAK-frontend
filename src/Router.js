@@ -14,7 +14,11 @@ function Router() {
         <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/list" element={<List />} />
+        <Route path="/list-chicken" element={<List productName="chicken" />} />
+        <Route
+          path="/list-dinosaur"
+          element={<List productName="dinosaur" />}
+        />
       </Routes>
     </BrowserRouter>
   );

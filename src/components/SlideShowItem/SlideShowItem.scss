@@ -1,7 +1,7 @@
 @import "../../styles/variables.scss";
 
 
-.slidingWrapper {
+.slideShowItem {
   padding: 20px;
   font-size: 30px;
 
@@ -10,7 +10,7 @@
     font-weight: $weight-bold;
   }
 
-  .slidingProducts {
+  .slidingWrapper {
     height: 300px;
     margin-top: 20px;
     border: $border-darkgray1;

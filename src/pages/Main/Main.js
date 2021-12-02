@@ -1,39 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SlidingWrapper from '../../components/SlidingWrapper/SlidingWrapper';
+import SlideShowItem from '../../components/SlideShowItem/SlideShowItem';
 import './Main.scss';
 
 function Main() {
   return (
     <div className="main">
-      <div className="mainPage">
+      <Link to="/">
         <div className="textWrapper">
-          <Link to="/">
-            <div className="text">
-              100% <br /> ORGANIC&nbsp;
-              <i class="fas fa-seedling" />
-            </div>
-          </Link>
+          <div className="text">
+            100% <br /> ORGANIC&nbsp;
+            <i class="fas fa-seedling" />
+          </div>
         </div>
-        <SlidingWrapper />
+      </Link>
+      <SlideShowItem />
+      <Link to="/">
         <div className="textWrapper">
-          <Link to="/">
-            <div className="text">
-              100% <br /> ORGANIC&nbsp;
-              <i class="fas fa-seedling" />
-            </div>
-          </Link>
+          <div className="text">
+            100% <br /> ORGANIC&nbsp;
+            <i class="fas fa-seedling" />
+          </div>
         </div>
-        <SlidingWrapper />
+      </Link>
+      <SlideShowItem />
+      <Link to="/">
         <div className="textWrapper">
-          <Link to="/">
-            <div className="text">
-              100% <br /> ORGANIC&nbsp;
-              <i class="fas fa-seedling" />
-            </div>
-          </Link>
+          <div className="text">
+            100% <br /> ORGANIC&nbsp;
+            <i class="fas fa-seedling" />
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 }

@@ -1,21 +1,19 @@
 @import "../../styles/variables.scss";
 
 .main {
-  .mainPage {
-    position: relative;
-    top: 100px;
+  position: relative;
+  top: 100px;
 
-    .textWrapper {
-      @include flexCenter;
-      height: 385px;
-      background-color: $color-black;
+  .textWrapper {
+    @include flexCenter;
+    height: 385px;
+    background-color: $color-black;
 
-      .text {
-        color: $color-white;
-        text-align: center;
-        font-size: 100px;
-        letter-spacing: 5px;
-      }
+    .text {
+      color: $color-white;
+      text-align: center;
+      font-size: 100px;
+      letter-spacing: 5px;
     }
   }
 }

@@ -68,7 +68,6 @@ function SignUp() {
   };
   const isClicked = () => {
     setCheckboxActive(!checkBoxActive);
-    console.log(checkBoxActive);
   };
   const getIsActive = () => {
     return (

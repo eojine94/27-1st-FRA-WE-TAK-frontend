@@ -24,9 +24,31 @@ function Login() {
   const isValidInput = () => {
     return email.length >= 1 && password.length >= 1;
   };
+
   const handleButtonAction = () => {
     return isValidInput() ? 'loginButtonAction' : 'loginButtonInaction';
   };
+
+  const handleButtonValid = () => {
+    // 1.validation
+    // 2. if(pass) login request to backend else alert return
+    // 3. if(login success) go to main else alert invalid user
+
+    // login request
+    // if(success)
+    // go to main
+    // else
+    // alert
+
+    // go to main
+
+    if (!isValidInput()) {
+      alert('please write a password or email address');
+    }
+  };
+
+  // function
+  // function return
 
   return (
     <main className="login">
@@ -63,8 +85,9 @@ function Login() {
       <div className="loginBottom">
         <button
           className={handleButtonAction()}
+          onClick={handleButtonValid}
           type="button"
-          disabled={!isValidInput()}
+          // disabled={!isValidInput()}
         >
           LOG IN
         </button>

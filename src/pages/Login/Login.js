@@ -21,34 +21,13 @@ function Login() {
     });
   };
 
-  const isValidInput = () => {
-    return email.length >= 1 && password.length >= 1;
-  };
-
-  const handleButtonAction = () => {
-    return isValidInput() ? 'loginButtonAction' : 'loginButtonInaction';
-  };
+  const isValidInput = email.length >= 1 && password.length >= 1;
 
   const handleButtonValid = () => {
-    // 1.validation
-    // 2. if(pass) login request to backend else alert return
-    // 3. if(login success) go to main else alert invalid user
-
-    // login request
-    // if(success)
-    // go to main
-    // else
-    // alert
-
-    // go to main
-
-    if (!isValidInput()) {
+    if (!isValidInput) {
       alert('please write a password or email address');
     }
   };
-
-  // function
-  // function return
 
   return (
     <main className="login">
@@ -84,15 +63,14 @@ function Login() {
       </div>
       <div className="loginBottom">
         <button
-          className={handleButtonAction()}
+          className={isValidInput ? 'loginButtonAction' : 'loginButtonInaction'}
           onClick={handleButtonValid}
           type="button"
-          // disabled={!isValidInput()}
         >
           LOG IN
         </button>
         <span className="join">
-          Not a member yet?{' '}
+          Not a member yet?
           <Link to="/signup">
             <span className="line">Join us.</span>
           </Link>

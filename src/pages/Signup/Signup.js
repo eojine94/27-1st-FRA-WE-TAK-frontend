@@ -51,35 +51,26 @@ function SignUp() {
     });
   };
 
-  const isValidInput = () => {
-    return (
-      userName.length >= 1 && phoneNumber.length >= 1 && address.length >= 1
-    );
-  };
-
-  const isValidEmail = () => {
-    return email.includes('@') && email.includes('.');
-  };
+  const isValidInput =
+    userName.length >= 1 && phoneNumber.length >= 1 && address.length >= 1;
+  const isValidEmail = email.includes('@') && email.includes('.');
 
   const specialLetter = password.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
 
-  const isValidPassword = () => {
-    return password.length >= 8 && specialLetter >= 1;
-  };
+  const isValidPassword = password.length >= 8 && specialLetter >= 1;
+
   const isClicked = () => {
     setCheckboxActive(!checkBoxActive);
   };
-  const getIsActive = () => {
-    return (
-      isValidEmail() &&
-      isValidPassword() &&
-      isValidInput() &&
-      checkBoxActive === true
-    );
+  const handleButtonValid = () => {
+    if (!isValidInput || !isValidEmail || !isValidPassword || !isClicked) {
+      alert('please fill in the blanks');
+    }
   };
-  const handleButtonAction = () => {
-    return getIsActive() ? 'signUpButtonAction' : 'signUpButtonInaction';
-  };
+
+  const getIsActive =
+    isValidEmail && isValidPassword && isValidInput && checkBoxActive === true;
+
   return (
     <main className="signUp">
       <div className="signUpTop">
@@ -144,14 +135,14 @@ function SignUp() {
           </div>
         </form>
         <div className="agreeCheckbox">
-          <div className="accountCheckboxAgreePolicy">
+          <div className="accountCheckboxAgree">
             <input type="checkbox" className="checkbox" onClick={isClicked} />
             <span className="checkboxContent">
               I agree to the
               <span className="line">terms&conditions and privacy policy</span>*
             </span>
           </div>
-          <div className="accountCheckboxAgreeNewsLetter">
+          <div className="accountCheckboxAgree">
             <input type="checkbox" className="checkbox" />
             <span className="checkboxContent">
               I would like to receive you newsletter
@@ -165,9 +156,11 @@ function SignUp() {
       </div>
       <div className="signUpBottom">
         <button
-          className={handleButtonAction()}
+          className={
+            getIsActive ? 'signUpButtonAction' : 'signUpButtonInaction'
+          }
           type="button"
-          disabled={!getIsActive()}
+          onClick={handleButtonValid}
         >
           CREATE USER ACCOUNT
         </button>

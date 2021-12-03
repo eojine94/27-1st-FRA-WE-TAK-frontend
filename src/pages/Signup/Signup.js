@@ -141,7 +141,11 @@ function SignUp() {
         </form>
         <div className="agreeCheckbox">
           <div className="accountCheckboxAgree">
-            <input type="checkbox" className="checkbox" onClick={isClicked} />
+            <input
+              type="checkbox"
+              className="checkbox"
+              onClick={isCheckBoxClicked}
+            />
             <span className="checkboxContent">
               I agree to the
               <span className="line">terms&conditions and privacy policy</span>*

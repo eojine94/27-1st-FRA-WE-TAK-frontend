@@ -59,11 +59,16 @@ function SignUp() {
 
   const isValidPassword = password.length >= 8 && specialLetter >= 1;
 
-  const isClicked = () => {
+  const isCheckBoxClicked = () => {
     setCheckboxActive(!checkBoxActive);
   };
   const handleButtonValid = () => {
-    if (!isValidInput || !isValidEmail || !isValidPassword || !isClicked) {
+    if (
+      !isValidInput ||
+      !isValidEmail ||
+      !isValidPassword ||
+      !isCheckBoxClicked
+    ) {
       alert('please fill in the blanks');
     }
   };

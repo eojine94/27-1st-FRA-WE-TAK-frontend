@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Item from '../Item/Item';
 import makeSymbolPrice from '../../utils';
 import './ItemsList.scss';
 
@@ -23,13 +23,12 @@ function ItemsList({ category, price }) {
         {[...Array(repeatingNumber)].map(() =>
           itemsList.map(item => {
             return (
-              <Link to={`/list-${category}`} key={item.id}>
-                <img
-                  className="itemsImage"
-                  src={item.image_src}
-                  alt={item.name}
-                />
-              </Link>
+              <Item
+                key={item.id}
+                category={category}
+                image_src={item.image_src}
+                name={item.name}
+              />
             );
           })
         )}

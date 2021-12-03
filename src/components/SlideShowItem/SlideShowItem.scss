@@ -2,7 +2,7 @@
 
 
 .slideShowItem {
-  padding: 20px;
+  padding: 40px;
   font-size: 30px;
 
   .categoryName {
@@ -10,10 +10,13 @@
     font-weight: $weight-bold;
   }
 
-  .slidingWrapper {
-    height: 300px;
+  .slideImageWrapper {
     margin-top: 20px;
-    border: $border-darkgray1;
+    border: 5px solid #56534C;
     border-radius: 5px;
+
+    .imageList {
+      display: inline-block;
+    }
   }
 }

@@ -1,0 +1,11 @@
+@import "../../styles/variables.scss";
+
+.item {
+  display: inline-block;
+
+  .itemsImage {
+    width: 200px;
+    height: 200px;
+    margin: 10px 5px;
+  }
+}

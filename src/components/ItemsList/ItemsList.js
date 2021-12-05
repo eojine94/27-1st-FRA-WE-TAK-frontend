@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Item from '../Item/Item';
 import makeSymbolPrice from '../../utils';
 import './ItemsList.scss';
+const REPEATING_NUNBER = 3;
 
 function ItemsList({ category, price }) {
   const [itemsList, setItemsList] = useState([]);
-  const repeatingNumber = 3;
 
   useEffect(() => {
     fetch('/data/itemListData.json', {
@@ -20,7 +20,7 @@ function ItemsList({ category, price }) {
       <h2 className="categoryName">{category}</h2>
       <h4 className="categoryPrice">{makeSymbolPrice(price)}</h4>
       <div className="imageWrapper">
-        {[...Array(repeatingNumber)].map(() =>
+        {[...Array(REPEATING_NUNBER)].map(() =>
           itemsList.map(item => {
             return (
               <Item

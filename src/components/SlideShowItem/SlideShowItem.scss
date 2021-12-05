@@ -10,13 +10,19 @@
     font-weight: $weight-bold;
   }
 
-  .slideImageWrapper {
-    margin-top: 20px;
+  .slideshow {
+    margin: 0 auto;
+    overflow: hidden;
     border: 5px solid #56534C;
     border-radius: 5px;
+    margin-top: 20px;
 
-    .imageList {
-      display: inline-block;
+    max-width: 1000px;
+
+
+    .slideshowSlider {
+      white-space: nowrap;
+      transition: ease 1000ms;
     }
   }
 }

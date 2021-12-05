@@ -3,9 +3,10 @@
 .item {
   display: inline-block;
 
-  .itemsImage {
-    width: 200px;
-    height: 200px;
+  .slide {
+    display: inline-block;
+    height: 400px;
+    width: 100%;
     margin: 10px 5px;
   }
 }

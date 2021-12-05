@@ -6,7 +6,7 @@ function Item({ category, image_src, name }) {
   return (
     <div className="item">
       <Link to={`/list-${category}`}>
-        <img className="itemsImage" src={image_src} alt={name} />
+        <img className="slide" src={image_src} alt={name} />
       </Link>
     </div>
   );

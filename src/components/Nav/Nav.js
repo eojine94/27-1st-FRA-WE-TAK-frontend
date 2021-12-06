@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Cart from '../Cart/Cart';
 import './Nav.scss';
 
@@ -16,20 +17,28 @@ function Nav() {
   return (
     <>
       <div className="nav">
-        <div className="navTitle">
-          <span className="greenColor">Frei</span>tak
-          <span className="greenColor">.</span>
-        </div>
+        <Link to="/">
+          <div className="navTitle">
+            <span className="greenColor">Frei</span>tak
+            <span className="greenColor">.</span>
+          </div>
+        </Link>
         <ul className="navMenu">
-          <li className="menu">CHICKEN</li>
-          <li className="eggLogo">
-            <img
-              className="eggLogoImg"
-              src="../image/egg_character2.jpg"
-              alt="eggLogo"
-            />
-          </li>
-          <li className="menu">DINOSAUR</li>
+          <Link to="/list-chicken">
+            <li className="menu">CHICKEN</li>
+          </Link>
+          <Link to="/">
+            <li className="eggLogo">
+              <img
+                className="eggLogoImg"
+                src="/image/egg_character2.jpg"
+                alt="eggLogo"
+              />
+            </li>
+          </Link>
+          <Link to="/list-dinosaur">
+            <li className="menu">DINOSAUR</li>
+          </Link>
         </ul>
         <ul className="navIcon">
           <li className="icon">

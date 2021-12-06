@@ -5,6 +5,7 @@ import Main from './pages/Main/Main';
 import Login from './pages/Login/Login';
 import SignUp from './pages/SignUp/SignUp';
 import List from './pages/List/List';
+import MyPage from './pages/MyPage/MyPage';
 
 function Router() {
   return (
@@ -19,6 +20,7 @@ function Router() {
           path="/list-dinosaur"
           element={<List productName="dinosaur" />}
         />
+        <Route path="my-page" element={<MyPage />} />
       </Routes>
     </BrowserRouter>
   );

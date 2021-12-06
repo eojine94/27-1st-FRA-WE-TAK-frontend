@@ -42,7 +42,9 @@ function Nav() {
         </ul>
         <ul className="navIcon">
           <li className="icon">
-            <i className="fas fa-user" />
+            <Link to="/my-page">
+              <i className="fas fa-user" />
+            </Link>
           </li>
           <li className="icon" onMouseEnter={openCartMenu}>
             <i className="fas fa-shopping-cart" />

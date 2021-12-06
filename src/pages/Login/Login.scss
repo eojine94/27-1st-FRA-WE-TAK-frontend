@@ -1,1 +1,78 @@
-@import "../../styles/variables.scss";
+@import '../../styles/variables.scss';
+
+.login {
+  display: flex;
+  flex-direction: column;
+  margin: 200px 0 0 50px;
+
+  .loginTop {
+    margin-bottom: 50px;
+    width: 1000px;
+
+    .loginTitle {
+      margin-bottom: 20px;
+      font-size: 70px;
+    }
+  }
+
+  .loginMiddle {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+
+    .loginInputMessage {
+      font-size: 15px;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+
+    .inputLine {
+      margin: 20px 0 30px 0;
+      width: 350px;
+      border-bottom: 2px solid black;
+    }
+
+    .clickedInputLine {
+      margin: 20px 0 30px 0;
+      width: 350px;
+      border-bottom: 2px solid #adc088;
+    }
+
+    .forgotPassword {
+      margin-top: 25px;
+      font-size: 17px;
+      letter-spacing: 1px;
+    }
+  }
+
+  .loginBottom {
+    display: flex;
+    flex-direction: column;
+
+    .loginButtonAction {
+      width: 120px;
+      height: 50px;
+      background-color: black;
+      color: white;
+      font-size: 17px;
+      font-weight: 700;
+    }
+    .loginButtonInaction {
+      width: 120px;
+      height: 50px;
+      background-color: rgb(128, 123, 123);
+      color: white;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .join {
+      margin-top: 25px;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .line {
+    background-color: #adc088;
+  }
+}

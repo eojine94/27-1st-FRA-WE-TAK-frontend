@@ -1,0 +1,112 @@
+@import "../../styles/variables.scss";
+
+.detail {
+  position: relative;
+  top: 100px;
+
+  .classificationWrapper {
+    margin-top: 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+
+    .classification {
+      padding: 0px 150px;
+
+      * {
+        display: inline-block;
+        font-weight: 800;
+        font-size: 15px;
+        margin-right: 5px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  .main {
+    width: 1440px;
+    margin: 0 auto;
+
+
+    .categoryName {
+      font-size: 80px;
+    }
+
+    .categoryNameWrapper {
+      display: flex;
+      font-size: 40px;
+
+      * {
+        margin: 10px 10px 10px 0px;
+      }
+    }
+
+    .imageInfoContainer {
+      display: flex;
+      justify-content: flex-start;
+      margin: 20px 10px 0px 10px;
+
+      .imageWrapper {
+        width: 60%;
+
+        * {
+          padding: 50px;
+          width: 50%;
+        }
+      }
+
+      .infoWrapper {
+        width: 30%;
+        margin: 50px 0px 0px 5%;
+
+        * {
+          margin: 12px 0px;
+        }
+
+        .categoryKoreanName {
+          font-size: 40px;
+          margin: 16px 0px 8px;
+        }
+
+        span {
+          font-size: 24px;
+          margin-right: 5px;
+        }
+
+        .shippingCostDescription {
+          font-size: 13px;
+        }
+
+        .btnAddToCart {
+          width: 400px;
+          border: 1px solid black;
+          height: 40px;
+          background-color: black;
+          color: white;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .warningWrapper {
+    position: relative;
+    top: 100px;
+    height: 200px;
+    line-height: 200px;
+    width: 100vw;
+
+    .warning {
+      padding-left: 10px;
+      background-color: lightgray;
+      font-size: 20px;
+    }
+  }
+
+  .imageDescriptionWrapper {
+    position: relative;
+    top: 100px;
+    width: 1440px;
+    margin: 0 auto;
+  }
+}

@@ -1,6 +1,6 @@
 import './ButtonContainer.scss';
 
-function ButtonContainer({ getIsActive, type, onClick, text }) {
+function ButtonContainer({ getIsActive = true, type, onClick, text }) {
   return (
     <button
       className={getIsActive ? 'buttonAction' : 'buttonInaction'}

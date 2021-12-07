@@ -5,8 +5,6 @@ import './PrintEmail.scss';
 function PrintEmail() {
   const navigate = useNavigate();
 
-  const getIsActive = true;
-
   const goToLogin = () => {
     navigate('/login');
   };
@@ -17,12 +15,7 @@ function PrintEmail() {
         <div className="inputEmail">naeun@gmail.com</div>
       </div>
       <div className="buttonContainer">
-        <ButtonContainer
-          getIsActive={getIsActive}
-          onClick={goToLogin}
-          type="button"
-          text="GO TO LOGIN"
-        />
+        <ButtonContainer onClick={goToLogin} type="button" text="GO TO LOGIN" />
       </div>
     </main>
   );

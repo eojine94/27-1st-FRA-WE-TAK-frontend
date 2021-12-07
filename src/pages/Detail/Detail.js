@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import makeSymbolPrice from '../../utils';
 import './Detail.scss';
 
 function Detail({ productName, category }) {
+  const [itemDetail, setItemDetail] = useState([]);
+
+  useEffect(() => {
+    fetch('/data/detailData.json', { method: 'GET' })
+      .then(res => res.json())
+      .then(data => setItemDetail(data.result[0]));
+  }, []);
+
   return (
     <div className="detail">
       <header className="classificationWrapper">
@@ -27,31 +36,40 @@ function Detail({ productName, category }) {
         </ul>
       </header>
       <article className="main">
-        <div className="categoryName">CATEGORY_KOR</div>
+        <span className="categoryName">{itemDetail.sub_category_kr_name}</span>
         <div className="categoryNameWrapper">
-          <span className="categoryEnglishName">CATEGORY_ENG</span>
-          <span className="price">PRICE</span>
+          <span className="categoryEnglishName">
+            {itemDetail.sub_category_en_name}
+          </span>
+          <span className="price">{itemDetail.price}</span>
         </div>
         <div className="imageInfoContainer">
           <div className="imageWrapper">
-            <img src="/image/egg_character2.jpg" alt="" />
-            <img src="/image/egg_character2.jpg" alt="" />
-            <img src="/image/egg_character2.jpg" alt="" />
-            <img src="/image/egg_character2.jpg" alt="" />
+            {[...Array(4)].map(() => (
+              <img
+                key={itemDetail.product_id}
+                src={itemDetail.description_img}
+                alt={itemDetail.kr_name}
+              />
+            ))}
           </div>
           <div className="infoWrapper">
-            <div className="categoryKoreanName">CATEGORY_KOR</div>
-            <span className="categoryEnglishName">CATEGORY_ENG</span>
+            <div className="categoryKoreanName">{itemDetail.kr_name}</div>
+            <span className="categoryEnglishName">{itemDetail.en_name}</span>
             <span>,</span>
-            <span className="price">PRICE</span>
+            <span className="price">{itemDetail.price}</span>
             <h4 className="shippingCostDescription">excl shipping cost</h4>
-            <div className="itemDescription">DESCRIPTION</div>
+            <div className="itemDescription">{itemDetail.description_txt}</div>
             <button className="btnAddToCart">ADD TO CART</button>
           </div>
         </div>
       </article>
       <article className="warningWrapper">
-        <div className="warning">주의사항 : 아주 좋아</div>
+        <p className="warning">
+          Parts of this product have spent their first life as a truck tarp on
+          the road and are made of PVC. don’t chew, don’t suck, don’t eat.
+          Unsuitable for children under the age of 3.
+        </p>
       </article>
       <article className="imageDescriptionWrapper">
         <img src="/image/egg_character2.jpg" alt="" />

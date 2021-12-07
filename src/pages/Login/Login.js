@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ButtonContainer from '../ButtonContainer/ButtonContainer';
+import InputContainer from '../InputContainer/InputContainer';
 import './Login.scss';
 
 function Login() {
   const [inputValue, setInputValue] = useState({
-    email: '',
-    password: '',
+    userEmail: '',
+    userPassword: '',
   });
 
-  const { email, password } = inputValue;
-
-  const [isActiveEmailBorder, setIsActiveEmailBorder] = useState(false);
-  const [isActivePasswordBorder, setIsActivePasswordBorder] = useState(false);
+  const { userEmail, userPassword } = inputValue;
 
   const handleInput = event => {
     const { name, value } = event.target;
@@ -21,10 +20,10 @@ function Login() {
     });
   };
 
-  const isValidInput = email.length >= 1 && password.length >= 1;
+  const getIsActive = userEmail.length >= 1 && userPassword.length >= 1;
 
   const handleButtonValid = () => {
-    if (!isValidInput) {
+    if (!getIsActive) {
       alert('please write a password or email address');
     }
   };
@@ -36,39 +35,33 @@ function Login() {
       </div>
       <div className="loginMiddle">
         <form className="loginInput">
-          <div className="emailInput">
-            <div className="loginInputMassage">Email address *</div>
-            <input
-              name="email"
-              className={isActiveEmailBorder ? 'clickedInputLine' : 'inputLine'}
-              onChange={handleInput}
-              onFocus={() => setIsActiveEmailBorder(true)}
-              onBlur={() => setIsActiveEmailBorder(false)}
-            />
-          </div>
-          <div className="passwordInput">
-            <div className="loginInputMassage">Password *</div>
-            <input
-              name="password"
-              className={
-                isActivePasswordBorder ? 'clickedInputLine' : 'inputLine'
-              }
-              onChange={handleInput}
-              onFocus={() => setIsActivePasswordBorder(true)}
-              onBlur={() => setIsActivePasswordBorder(false)}
-            />
-          </div>
-          <span className="forgotPassword line">Forgot your password?</span>
+          <InputContainer
+            name="userEmail"
+            text="Email(ID) *"
+            id="email"
+            type="text"
+            onChange={handleInput}
+          />
+          <InputContainer
+            name="userPassword"
+            text="Password *"
+            id="password"
+            type="password"
+            onChange={handleInput}
+          />
+
+          <span className="forgotIDPassword line">
+            Forgot your ID or password?
+          </span>
         </form>
       </div>
       <div className="loginBottom">
-        <button
-          className={isValidInput ? 'loginButtonAction' : 'loginButtonInaction'}
+        <ButtonContainer
+          getIsActive={getIsActive}
           onClick={handleButtonValid}
           type="button"
-        >
-          LOG IN
-        </button>
+          text="LOG IN"
+        />
         <span className="join">
           Not a member yet?
           <Link to="/signup">

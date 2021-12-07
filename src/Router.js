@@ -5,6 +5,9 @@ import Main from './pages/Main/Main';
 import Login from './pages/Login/Login';
 import SignUp from './pages/SignUp/SignUp';
 import List from './pages/List/List';
+import FindId from './pages/FindId/FindId';
+import FindPassword from './pages/FindPassword/FindPassword';
+import ResetPassword from './pages/ResetPassword/ResetPassword';
 
 function Router() {
   return (
@@ -19,6 +22,9 @@ function Router() {
           path="/list-dinosaur"
           element={<List productName="dinosaur" />}
         />
+        <Route path="/find-id" element={<FindId />} />
+        <Route path="/find-password" element={<FindPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
       </Routes>
     </BrowserRouter>
   );

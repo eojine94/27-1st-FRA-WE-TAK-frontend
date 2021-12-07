@@ -24,12 +24,11 @@ function Login() {
   };
 
   const getIsActive = userEmail.length >= 1 && userPassword.length >= 1;
-  console.log(inputValue);
+
   const handleButtonValid = () => {
     if (!getIsActive) {
       alert('please write a password or email address');
     } else {
-      console.log('lalala');
       fetch('http://10.58.5.68:8000/users/login', {
         method: 'POST',
         body: JSON.stringify({

@@ -53,7 +53,6 @@ function SignUp() {
     if (!getIsActive) {
       alert('please fill in the blanks');
     } else {
-      console.log('nanana');
       fetch('http://10.58.5.68:8000/users/signup', {
         method: 'POST',
         body: JSON.stringify({

@@ -12,14 +12,14 @@
   background-color: $color-white;
   font-weight: bold;
   text-align: center;
-  z-index: 1000000000;
+  z-index: 10000000;
 
   .cartListTitle {
     padding: 15px 15px 20px 15px;
     font-size: 23px;
   }
 
-  .cartDetail {
+  .cartListDetail {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -34,30 +34,8 @@
     }
   }
 
-  .itemList {
-    overflow-y: scroll;
-    height: 313px;
-
-    .itemDetail {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      margin: 20px 0 20px 0;
-      padding: 20px 0px 20px 15px;
-      text-align: center;
-      font-size: 17px;
-
-      &:hover {
-        background-color: #d5d5d5;
-        border-radius: 3px;
-      }
-
-      .eggItemImage {
-        width: 50px;
-      }
-      * {
-        width: 50px;
-      }
-    }
+  .cartItems {
+    // overflow-y: scroll;
+    max-height: 313px;
   }
 }

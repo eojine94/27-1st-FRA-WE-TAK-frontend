@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Sunflower:wght@300;500;700&display=swap');
+
 // Color
 $color-black: #262626;
 $color-dark-gray: #8e8e8e;
@@ -35,9 +37,13 @@ $size-icon-large: 42px;
 $border-gray1: 1px solid $color-gray;
 $border-darkgray1: 1px solid $color-dark-gray;
 $border-blackbrown1: 1px solid #5d5d5d;
+$border-brightgray1: 1px solid rgb(201, 201, 201);
 
 //Margin
 $margin-center: 0 auto;
+
+//korean font
+$korean-font: 'Sunflower', sans-serif;
 
 @mixin flexCenter {
   display: flex;
@@ -63,4 +69,9 @@ $margin-center: 0 auto;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@mixin flexAlignCenter {
+  display: flex;
+  align-items: center;
 }

@@ -3,6 +3,7 @@ import './MyPage.scss';
 import MyPageCartItem from '../../components/MyPageCartItem/MyPageCartItem';
 
 function MyPage() {
+
   const [goToOrder, setGoToOrder] = useState(true);
   // console.log(goToOrder);
 
@@ -17,6 +18,7 @@ function MyPage() {
         setUserProfiles(data.cart_items[0]);
       });
   }, []);
+
 
   return (
     <div className="mypage">
@@ -37,7 +39,6 @@ function MyPage() {
       <ul className="myPageCartItemList">
         <MyPageCartItem setGoToOrder={setGoToOrder} />
       </ul>
-
       <button
         className="order"
         onClick={e => {
@@ -46,6 +47,7 @@ function MyPage() {
       >
         Go to order
       </button>
+
     </div>
   );
 }

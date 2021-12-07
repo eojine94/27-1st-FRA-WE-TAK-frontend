@@ -31,7 +31,7 @@ function Nav() {
             <li className="eggLogo">
               <img
                 className="eggLogoImg"
-                src="../image/egg_character2.jpg"
+                src="/image/egg_character2.jpg"
                 alt="eggLogo"
               />
             </li>

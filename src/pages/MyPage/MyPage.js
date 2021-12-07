@@ -17,8 +17,6 @@ function MyPage() {
       <h3 className="myPageCartItemListTitle">Shopping Cart List</h3>
       <ul className="myPageCartItemList">
         <MyPageCartItem />
-        <MyPageCartItem />
-        <MyPageCartItem />
       </ul>
 
       <button className="order">Go to order</button>

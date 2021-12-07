@@ -1,0 +1,29 @@
+[
+  {
+    "src": "/image/logo.png",
+    "id": 0,
+    "koreanName": "한국이름",
+    "englishName": "englishname",
+    "subCategory": "유정란",
+    "count": 1,
+    "price": 100000
+  },
+  {
+    "src": "/image/logo.png",
+    "id": 1,
+    "koreanName": "한국이름",
+    "englishName": "englishname",
+    "subCategory": "유정란",
+    "count": 3,
+    "price": 15500
+  },
+  {
+    "src": "/image/logo.png",
+    "id": 2,
+    "koreanName": "한국이름",
+    "englishName": "englishname",
+    "subCategory": "유정란",
+    "count": 1,
+    "price": 100000
+  }
+]

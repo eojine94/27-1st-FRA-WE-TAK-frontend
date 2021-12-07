@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Item from '../Item/Item';
 import './SlideShowItem.scss';
-const DELAY_TIME_MS = 100;
+const DELAY_TIME_MS = 50;
 
 function SlideShowItem({ productName }) {
   const [itemsList, setItemsList] = useState([]);
   const [index, setIndex] = useState(0);
+  const slideRef = useRef();
 
   useEffect(() => {
     fetch('/data/itemListData.json', {
@@ -21,16 +22,14 @@ function SlideShowItem({ productName }) {
         prevIndex === itemsList.length - 1 ? 0 : prevIndex + 1
       );
     }, DELAY_TIME_MS);
-  });
+    slideRef.current.style.transform = `translateX(${-index * 10}%)`;
+  }, [index]);
 
   return (
     <div className="slideShowItem">
       <div className="categoryName">{productName.toUpperCase()}</div>
       <div className="slideshow">
-        <div
-          className="slideshowSlider"
-          style={{ transform: `translate(${-index * 100}%, 0)` }}
-        >
+        <div className="slideshowSlider" ref={slideRef}>
           {itemsList.map(item => (
             <Item key={index.id} image_src={item.image_src} name={item.name} />
           ))}

@@ -6,6 +6,7 @@ import Login from './pages/Login/Login';
 import SignUp from './pages/SignUp/SignUp';
 import List from './pages/List/List';
 import Detail from './pages/Detail/Detail';
+import MyPage from './pages/MyPage/MyPage';
 
 function Router() {
   return (
@@ -64,6 +65,7 @@ function Router() {
           path="/detail-digimon"
           element={<Detail productName="dinosaur" category="digimon" />}
         />
+        <Route path="my-page" element={<MyPage />} />
       </Routes>
     </BrowserRouter>
   );

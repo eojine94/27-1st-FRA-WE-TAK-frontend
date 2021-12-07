@@ -1,0 +1,60 @@
+@import '../../styles/variables.scss';
+
+.myPageCartItem {
+  @include flexSpaceBetweenCenter;
+  width: 1000px;
+  padding: 20px 15px;
+  border-top: $border-brightgray1;
+  border-bottom: $border-brightgray1;
+
+  .myPageCartItemInfo {
+    @include flexAlignCenter;
+    width: 300px;
+
+    .myPageCartItemPhoto {
+      width: 100px;
+      margin-right: 40px;
+    }
+
+    .itemInfoKoreanName,
+    .itemInfoEnglishName,
+    .itemInfoSubCategory {
+      display: block;
+      margin: 10px;
+    }
+
+    .itemInfoKoreanName {
+      font-family: $korean-font;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .itemInfoEnglishName {
+      letter-spacing: 1.5px;
+    }
+
+    .itemInfoSubCategory {
+      font-family: $korean-font;
+    }
+
+    .itemInfoEnglishName,
+    .itemInfoSubCategory {
+      color: rgb(58, 58, 58);
+      font-size: $font-small;
+    }
+  }
+
+  .myPageItemCount {
+    @include flexAlignCenter;
+
+    .plusButton,
+    .miusButton {
+      display: block;
+      width: 20px;
+      height: 20px;
+      margin: 2px 0 0 10px;
+      border: $border-brightgray1;
+      color: rgb(128, 128, 128);
+    }
+  }
+}

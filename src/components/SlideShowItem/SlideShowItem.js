@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Item from '../Item/Item';
 import './SlideShowItem.scss';
+const DELAY_TIME_MS = 100;
 
 function SlideShowItem({ productName }) {
   const [itemsList, setItemsList] = useState([]);
   const [index, setIndex] = useState(0);
-  const delay = 100;
 
   useEffect(() => {
     fetch('/data/itemListData.json', {
@@ -20,7 +20,7 @@ function SlideShowItem({ productName }) {
       setIndex(prevIndex =>
         prevIndex === itemsList.length - 1 ? 0 : prevIndex + 1
       );
-    }, delay);
+    }, DELAY_TIME_MS);
   });
 
   return (
@@ -29,7 +29,7 @@ function SlideShowItem({ productName }) {
       <div className="slideshow">
         <div
           className="slideshowSlider"
-          style={{ transform: `translate(${-index * 50}%, 0)` }}
+          style={{ transform: `translate(${-index * 100}%, 0)` }}
         >
           {itemsList.map(item => (
             <Item key={index.id} image_src={item.image_src} name={item.name} />

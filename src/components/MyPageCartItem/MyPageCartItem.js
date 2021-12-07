@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './MyPageCartItem.scss';
 
-function MyPageCartItem() {
+function MyPageCartItem({ setGoToOrder }) {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -10,7 +10,7 @@ function MyPageCartItem() {
     })
       .then(response => response.json())
       .then(data => {
-        setItems([data.cart_items[0]]);
+        setItems(data.cart_items);
       });
   }, []);
 
@@ -19,7 +19,7 @@ function MyPageCartItem() {
     // map 을 써서 id 가 다른 아이는 그냥 그 계란을 쓰고, id 가 다르면 그 계란 정보 중 count 만 변경하고 나머지는 같게 만든 후 다시 setitem에 넣는다
     setItems(
       items.map(item =>
-        item.id !== id
+        item.cart_id !== id
           ? item
           : {
               ...item,
@@ -32,7 +32,7 @@ function MyPageCartItem() {
   const miusItemNum = id => {
     setItems(
       items.map(item =>
-        item.id === id && item.count !== 1
+        item.cart_id === id && item.count !== 1
           ? { ...item, count: item.count - 1 }
           : item
       )
@@ -42,14 +42,18 @@ function MyPageCartItem() {
   };
 
   const deleteItem = id => {
-    return setItems(items.filter(item => item.id !== id));
+    return setItems(items.filter(item => item.cart_id !== id));
   };
 
   return (
     <div>
+      {items.length === 0 && (
+        <div className="noMyPageCartItem">장바구니에 담긴 상품이 없습니다</div>
+      )}
+      {items.length === 0 && setGoToOrder(false)}
       {items.map(item => {
         return (
-          <li className="myPageCartItem" key={item.product_id}>
+          <li className="myPageCartItem" key={item.cart_id}>
             <div className="myPageCartItemInfo">
               <img
                 className="myPageCartItemPhoto"
@@ -70,13 +74,13 @@ function MyPageCartItem() {
               <div className="ItemCountButton">
                 <button
                   className="plusButton"
-                  onClick={() => plusItemNum(item.id)}
+                  onClick={() => plusItemNum(item.cart_id)}
                 >
                   +
                 </button>
                 <button
                   className="miusButton"
-                  onClick={() => miusItemNum(item.id)}
+                  onClick={() => miusItemNum(item.cart_id)}
                 >
                   -
                 </button>
@@ -90,7 +94,7 @@ function MyPageCartItem() {
             <div className="myPageItemDelete">
               <button
                 className="deleteButton"
-                onClick={() => deleteItem(item.id)}
+                onClick={() => deleteItem(item.cart_id)}
               >
                 X
               </button>

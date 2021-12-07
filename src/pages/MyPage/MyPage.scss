@@ -26,10 +26,17 @@
     }
 
     .greetUserName {
+      display: flex;
+      align-items: center;
       margin-top: 50px;
       color: green;
       letter-spacing: 2px;
       font-size: 25px;
+
+      .koreanName {
+        font-family: $korean-font;
+        font-size: 22px;
+      }
     }
 
     .myPageText {

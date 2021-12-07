@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { isCompositeComponent } from 'react-dom/test-utils';
 import './InputContainer.scss';
 
 function InputContainer({ id, type, name, onChange, text }) {

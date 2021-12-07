@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import InputContainer from '../InputContainer/InputContainer';
 import ButtonContainer from '../ButtonContainer/ButtonContainer';
 import './FindPassword.scss';

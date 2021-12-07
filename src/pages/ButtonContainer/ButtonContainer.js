@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-import { isCompositeComponent } from 'react-dom/test-utils';
 import './ButtonContainer.scss';
 
 function ButtonContainer({ getIsActive, type, onClick, text }) {

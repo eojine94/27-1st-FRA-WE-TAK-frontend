@@ -36,12 +36,14 @@ function Detail({ productName, category }) {
         </ul>
       </header>
       <article className="main">
-        <span className="categoryName">{itemDetail.sub_category_kr_name}</span>
+        <div className="categoryKorName">{itemDetail.sub_category_kr_name}</div>
         <div className="categoryNameWrapper">
-          <span className="categoryEnglishName">
+          <span className="categoryEngName">
             {itemDetail.sub_category_en_name}
           </span>
-          <span className="price">{itemDetail.price}</span>
+          <div className="price">
+            {itemDetail.price && makeSymbolPrice(itemDetail.price)}
+          </div>
         </div>
         <div className="imageInfoContainer">
           <div className="imageWrapper">
@@ -72,7 +74,10 @@ function Detail({ productName, category }) {
         </p>
       </article>
       <article className="imageDescriptionWrapper">
-        <img src="/image/egg_character2.jpg" alt="" />
+        <img
+          src={itemDetail.description_img}
+          alt={itemDetail.description_txt}
+        />
       </article>
     </div>
   );

@@ -17,8 +17,7 @@
     }
 
     .itemInfoKoreanName,
-    .itemInfoEnglishName,
-    .itemInfoSubCategory {
+    .itemInfoEnglishName {
       display: block;
       margin: 10px;
     }
@@ -31,14 +30,6 @@
 
     .itemInfoEnglishName {
       letter-spacing: 1.5px;
-    }
-
-    .itemInfoSubCategory {
-      font-family: $korean-font;
-    }
-
-    .itemInfoEnglishName,
-    .itemInfoSubCategory {
       color: rgb(58, 58, 58);
       font-size: $font-small;
     }

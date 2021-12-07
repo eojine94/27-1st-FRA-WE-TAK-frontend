@@ -1,29 +1,14 @@
-[
-  {
-    "src": "/image/logo.png",
-    "id": 0,
-    "koreanName": "한국이름",
-    "englishName": "englishname",
-    "subCategory": "유정란",
-    "count": 1,
-    "price": 100000
-  },
-  {
-    "src": "/image/logo.png",
-    "id": 1,
-    "koreanName": "한국이름",
-    "englishName": "englishname",
-    "subCategory": "유정란",
-    "count": 3,
-    "price": 15500
-  },
-  {
-    "src": "/image/logo.png",
-    "id": 2,
-    "koreanName": "한국이름",
-    "englishName": "englishname",
-    "subCategory": "유정란",
-    "count": 1,
-    "price": 100000
-  }
-]
+{
+  "cart_items": [
+    {
+      "product_id": 1,
+      "product_kr_name": "친환경 무항생제 유정란 01red",
+      "product_en_name": "Eco-friendly antibiotic-free fertilized egg 01red",
+      "product_price": "12900.00",
+      "count": 5,
+      "product_image": [
+        "https://media.vlpt.us/images/jaejaypark/post/72eeb193-c81e-4639-bf3e-2ab7163ec55d/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-12-01%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%204.40.21.png"
+      ]
+    }
+  ]
+}

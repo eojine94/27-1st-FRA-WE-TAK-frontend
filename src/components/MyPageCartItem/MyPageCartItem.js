@@ -10,7 +10,7 @@ function MyPageCartItem() {
     })
       .then(response => response.json())
       .then(data => {
-        setItems(data);
+        setItems([data.cart_items[0]]);
       });
   }, []);
 
@@ -32,30 +32,37 @@ function MyPageCartItem() {
   const miusItemNum = id => {
     setItems(
       items.map(item =>
-        item.id !== id ? item : { ...item, count: item.count - 1 }
+        item.id === id && item.count !== 1
+          ? { ...item, count: item.count - 1 }
+          : item
       )
     );
 
-    // itemNum === 0 && deleteItem;
+    // itemNum === 1 && nonclick;
   };
 
-  // const deleteItem = () => {};
+  const deleteItem = id => {
+    return setItems(items.filter(item => item.id !== id));
+  };
 
   return (
     <div>
       {items.map(item => {
         return (
-          <li className="myPageCartItem" key={item.id}>
+          <li className="myPageCartItem" key={item.product_id}>
             <div className="myPageCartItemInfo">
               <img
                 className="myPageCartItemPhoto"
-                src={item.src}
+                src={item.product_image}
                 alt="eggItem"
               />
               <div className="itemInfoList">
-                <span className="itemInfoKoreanName">{item.koreanName}</span>
-                <span className="itemInfoEnglishName">{item.englishName}</span>
-                <span className="itemInfoSubCategory">{item.subCategory}</span>
+                <span className="itemInfoKoreanName">
+                  {item.product_kr_name}
+                </span>
+                <span className="itemInfoEnglishName">
+                  {item.product_en_name}
+                </span>
               </div>
             </div>
             <div className="myPageItemCount">
@@ -77,11 +84,16 @@ function MyPageCartItem() {
             </div>
             <div className="myPageItemPrice">
               <span className="myPageCartItemPrice">
-                {item.price * item.count}
+                {item.product_price * item.count}
               </span>
             </div>
             <div className="myPageItemDelete">
-              <button className="deleteButton">X</button>
+              <button
+                className="deleteButton"
+                onClick={() => deleteItem(item.id)}
+              >
+                X
+              </button>
             </div>
           </li>
         );

@@ -8,6 +8,7 @@ import List from './pages/List/List';
 import FindId from './pages/FindId/FindId';
 import FindPassword from './pages/FindPassword/FindPassword';
 import ResetPassword from './pages/ResetPassword/ResetPassword';
+import PrintEmail from './pages/PrintEmail/PrintEmail';
 
 function Router() {
   return (
@@ -25,6 +26,7 @@ function Router() {
         <Route path="/find-id" element={<FindId />} />
         <Route path="/find-password" element={<FindPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/print-email" element={<PrintEmail />} />
       </Routes>
     </BrowserRouter>
   );

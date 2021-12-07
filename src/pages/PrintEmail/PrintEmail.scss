@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+
+.printContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 200px;
+
+  .printEmail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 200px;
+    box-shadow: 0px 0px 20px rgb(145, 142, 142);
+    font-size: 20px;
+  }
+
+  .buttonContainer {
+    margin-top: 80px;
+  }
+}

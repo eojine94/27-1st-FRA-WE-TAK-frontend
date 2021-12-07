@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import InputContainer from '../InputContainer/InputContainer';
 import ButtonContainer from '../ButtonContainer/ButtonContainer';
 import './ResetPassword.scss';
 
 function ResetPassword() {
+  const navigate = useNavigate();
+
   const [inputValue, setInputValue] = useState({
     userNewPassword: '',
     userConfirmPassword: '',
@@ -32,7 +35,24 @@ function ResetPassword() {
 
   const handleButtonValid = () => {
     if (!getIsActive) {
-      alert('Please fill the blanks');
+      alert('please fill the blanks');
+    } else {
+      fetch('', {
+        method: 'POST',
+        body: JSON.stringify({
+          name: inputValue.userName,
+          email: inputValue.userEmail,
+          contact: inputValue.userPhoneNumber,
+        }),
+      })
+        .then(response => response.json())
+        .then(result => {
+          if (result.message) {
+            navigate('/');
+          } else {
+            alert('잘못된 정보입니다!');
+          }
+        });
     }
   };
 

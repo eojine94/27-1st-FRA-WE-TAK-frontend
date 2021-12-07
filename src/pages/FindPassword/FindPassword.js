@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import InputContainer from '../InputContainer/InputContainer';
 import ButtonContainer from '../ButtonContainer/ButtonContainer';
 import './FindPassword.scss';
 
 function FindPassword() {
+  const navigate = useNavigate();
+
   const [inputValue, setInputValue] = useState({
     userName: '',
     userEmail: '',
@@ -27,8 +30,25 @@ function FindPassword() {
   const getIsActive = isValidEmail && isValidInput;
 
   const handleButtonValid = () => {
-    if (!isValidEmail || !isValidInput) {
+    if (!getIsActive) {
       alert('please fill the blanks');
+    } else {
+      fetch('', {
+        method: 'POST',
+        body: JSON.stringify({
+          name: inputValue.userName,
+          email: inputValue.userEmail,
+          contact: inputValue.userPhoneNumber,
+        }),
+      })
+        .then(response => response.json())
+        .then(result => {
+          if (result.message) {
+            navigate('/reset-password');
+          } else {
+            alert('잘못된 정보입니다!');
+          }
+        });
     }
   };
 

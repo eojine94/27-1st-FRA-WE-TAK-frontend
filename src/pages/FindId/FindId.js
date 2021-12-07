@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import InputContainer from '../InputContainer/InputContainer';
 import ButtonContainer from '../ButtonContainer/ButtonContainer';
 import './FindId.scss';
 
 function FindId() {
+  const navigate = useNavigate();
+
   const [inputValue, setInputValue] = useState({
     userName: '',
     userPhoneNumber: '',
@@ -25,6 +28,22 @@ function FindId() {
   const handleButtonValid = () => {
     if (!getIsActive) {
       alert('please fill the blanks');
+    } else {
+      fetch('', {
+        method: 'POST',
+        body: JSON.stringify({
+          name: inputValue.userName,
+          contact: inputValue.userPhoneNumber,
+        }),
+      })
+        .then(response => response.json())
+        .then(result => {
+          if (result.message) {
+            navigate('/login');
+          } else {
+            alert('잘못된 정보입니다!');
+          }
+        });
     }
   };
 

@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import ButtonContainer from '../ButtonContainer/ButtonContainer';
 import InputContainer from '../InputContainer/InputContainer';
 import './Login.scss';
 
 function Login() {
+  const navigate = useNavigate();
+
   const [inputValue, setInputValue] = useState({
     userEmail: '',
     userPassword: '',
@@ -21,10 +24,27 @@ function Login() {
   };
 
   const getIsActive = userEmail.length >= 1 && userPassword.length >= 1;
-
+  console.log(inputValue);
   const handleButtonValid = () => {
     if (!getIsActive) {
       alert('please write a password or email address');
+    } else {
+      console.log('lalala');
+      fetch('http://10.58.5.68:8000/users/login', {
+        method: 'POST',
+        body: JSON.stringify({
+          email: inputValue.userEmail,
+          password: inputValue.userPassword,
+        }),
+      })
+        .then(response => response.json())
+        .then(result => {
+          if (result.message) {
+            navigate('/');
+          } else {
+            alert('잘못된 정보입니다!');
+          }
+        });
     }
   };
 

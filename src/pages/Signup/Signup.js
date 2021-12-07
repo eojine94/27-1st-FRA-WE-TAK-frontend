@@ -50,10 +50,11 @@ function SignUp() {
     checkBoxActive;
 
   const handleButtonValid = () => {
-    if (!isValidInput) {
+    if (!getIsActive) {
       alert('please fill in the blanks');
     } else {
-      fetch('http://10.58.2.108:8000/users/signup', {
+      console.log('nanana');
+      fetch('http://10.58.5.68:8000/users/signup', {
         method: 'POST',
         body: JSON.stringify({
           name: inputValue.userName,

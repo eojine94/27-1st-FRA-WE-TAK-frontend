@@ -19,7 +19,12 @@ function MyPageCartItem() {
     // map 을 써서 id 가 다른 아이는 그냥 그 계란을 쓰고, id 가 다르면 그 계란 정보 중 count 만 변경하고 나머지는 같게 만든 후 다시 setitem에 넣는다
     setItems(
       items.map(item =>
-        item.id !== id ? item : { ...item, count: item.count + 1 }
+        item.id !== id
+          ? item
+          : {
+              ...item,
+              count: item.count + 1,
+            }
       )
     );
   };
@@ -71,7 +76,9 @@ function MyPageCartItem() {
               </div>
             </div>
             <div className="myPageItemPrice">
-              <span className="myPageCartItemPrice">{item.price}</span>
+              <span className="myPageCartItemPrice">
+                {item.price * item.count}
+              </span>
             </div>
             <div className="myPageItemDelete">
               <button className="deleteButton">X</button>

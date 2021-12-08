@@ -1,6 +1,6 @@
 [
-  { "id": 1, "category": "유정란", "price": 12900 },
-  { "id": 2, "category": "맥반석 계란", "price": 16000 },
-  { "id": 3, "category": "클로렐라 계란", "price": 6200 },
-  { "id": 4, "category": "청계란", "price": 7500 }
+  { "id": 1, "categoryName": "유정란", "price": 12900 },
+  { "id": 2, "categoryName": "맥반석 계란", "price": 16000 },
+  { "id": 3, "categoryName": "클로렐라 계란", "price": 6200 },
+  { "id": 4, "categoryName": "청계란", "price": 7500 }
 ]

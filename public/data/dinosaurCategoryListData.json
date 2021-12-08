@@ -1,8 +1,8 @@
 [
-  { "id": 1, "category": "백악기", "price": 12900 },
-  { "id": 2, "category": "신석기", "price": 16000 },
-  { "id": 3, "category": "구석기", "price": 6200 },
-  { "id": 4, "category": "중석기", "price": 183500 },
-  { "id": 5, "category": "포켓몬스터", "price": 200500 },
-  { "id": 6, "category": "디지몬", "price": 990500 }
+  { "id": 1, "categoryName": "백악기", "price": 12900 },
+  { "id": 2, "categoryName": "신석기", "price": 16000 },
+  { "id": 3, "categoryName": "구석기", "price": 6200 },
+  { "id": 4, "categoryName": "중석기", "price": 183500 },
+  { "id": 5, "categoryName": "포켓몬스터", "price": 200500 },
+  { "id": 6, "categoryName": "디지몬", "price": 990500 }
 ]

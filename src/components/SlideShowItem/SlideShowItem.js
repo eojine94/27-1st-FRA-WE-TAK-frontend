@@ -3,35 +3,30 @@ import Item from '../Item/Item';
 import './SlideShowItem.scss';
 const DELAY_TIME_MS = 50;
 
-function SlideShowItem({ productName }) {
-  const [itemsList, setItemsList] = useState([]);
+function SlideShowItem({ productName, sub_category_list }) {
   const [index, setIndex] = useState(0);
   const slideRef = useRef();
 
   useEffect(() => {
-    fetch('/data/itemListData.json', {
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(data => setItemsList(data));
-  }, []);
-
-  useEffect(() => {
     setTimeout(() => {
       setIndex(prevIndex =>
-        prevIndex === itemsList.length - 1 ? 0 : prevIndex + 1
+        prevIndex === sub_category_list.length - 1 ? 0 : prevIndex + 1
       );
     }, DELAY_TIME_MS);
     slideRef.current.style.transform = `translateX(${-index * 10}%)`;
-  }, [index, itemsList.length]);
+  }, [index, sub_category_list.length]);
 
   return (
     <div className="slideShowItem">
       <div className="categoryName">{productName.toUpperCase()}</div>
       <div className="slideshow">
         <div className="slideshowSlider" ref={slideRef}>
-          {itemsList.map(item => (
-            <Item key={index.id} image_src={item.image_src} name={item.name} />
+          {sub_category_list.map(sctgr => (
+            <Item
+              key={sctgr.id}
+              url={sctgr.thumbnail_url}
+              krName={sctgr.kr_name}
+            />
           ))}
         </div>
       </div>

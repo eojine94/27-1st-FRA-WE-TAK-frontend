@@ -4,14 +4,29 @@ import ItemsList from '../../components/ItemsList/ItemsList';
 import './List.scss';
 
 function List() {
-  const { productName } = useParams();
-  const [categoryList, setCategoryList] = useState([]);
+  const { main_category_name } = useParams();
+  const [listData, setListData] = useState([]);
 
   useEffect(() => {
-    fetch(`/data/${productName}CategoryListData.json`, { method: 'GET' })
+    fetch(`/data/listData.json`)
       .then(res => res.json())
-      .then(data => setCategoryList(data));
-  }, [productName]);
+      .then(data => setListData(data.result));
+  }, [main_category_name]);
+
+  const mainCategoryList = listData.filter(
+    el => el.main_category_name === `${main_category_name}`
+  );
+
+  const subCategoryList = mainCategoryList.reduce(function (acc, current) {
+    if (
+      acc.findIndex(
+        ({ sub_category_id }) => sub_category_id === current.sub_category_id
+      ) === -1
+    ) {
+      acc.push(current);
+    }
+    return acc;
+  }, []);
 
   return (
     <div className="list">
@@ -25,16 +40,19 @@ function List() {
             {'>'}
           </li>
           <li>
-            <Link to={`/list/${productName}`}>{productName.toUpperCase()}</Link>
+            <Link to={`/list/${main_category_name}`}>
+              {main_category_name.toUpperCase()}
+            </Link>
           </li>
         </ul>
       </div>
-      {categoryList.map(ctgr => {
+      {subCategoryList.map(ctgr => {
         return (
           <ItemsList
-            key={ctgr.id}
-            category={ctgr.category}
+            key={ctgr.product_id}
+            sub_category_name={ctgr.sub_category_name}
             price={ctgr.price}
+            listData={listData}
           />
         );
       })}

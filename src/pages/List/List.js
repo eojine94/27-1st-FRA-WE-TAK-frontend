@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import ItemsList from '../../components/ItemsList/ItemsList';
 import './List.scss';
 
-function List({ productName }) {
+function List() {
+  const { productName } = useParams();
   const [categoryList, setCategoryList] = useState([]);
 
   useEffect(() => {
@@ -24,7 +25,7 @@ function List({ productName }) {
             {'>'}
           </li>
           <li>
-            <Link to={`/list-${productName}`}>{productName.toUpperCase()}</Link>
+            <Link to={`/list/${productName}`}>{productName.toUpperCase()}</Link>
           </li>
         </ul>
       </div>

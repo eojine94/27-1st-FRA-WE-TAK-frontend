@@ -1,0 +1,12 @@
+@import "../../styles/variables.scss";
+
+.item {
+  display: inline-block;
+
+  .slide {
+    display: inline-block;
+    height: 400px;
+    width: 100%;
+    margin: 10px 5px;
+  }
+}

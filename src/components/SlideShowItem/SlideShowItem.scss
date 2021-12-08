@@ -2,7 +2,7 @@
 
 
 .slideShowItem {
-  padding: 20px;
+  padding: 40px;
   font-size: 30px;
 
   .categoryName {
@@ -10,10 +10,18 @@
     font-weight: $weight-bold;
   }
 
-  .slidingWrapper {
-    height: 300px;
-    margin-top: 20px;
-    border: $border-darkgray1;
+  .slideshow {
+    margin: 0 auto;
+    overflow: hidden;
+    border: 5px solid #56534C;
     border-radius: 5px;
+    margin-top: 20px;
+    max-width: 1000px;
+
+
+    .slideshowSlider {
+      white-space: nowrap;
+      transition: ease 5000ms;
+    }
   }
 }

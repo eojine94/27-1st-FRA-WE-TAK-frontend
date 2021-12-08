@@ -14,7 +14,7 @@ function Main() {
           </div>
         </div>
       </Link>
-      <SlideShowItem />
+      <SlideShowItem productName="chicken" />
       <Link to="/">
         <div className="textWrapper">
           <div className="text">
@@ -23,12 +23,12 @@ function Main() {
           </div>
         </div>
       </Link>
-      <SlideShowItem />
+      <SlideShowItem productName="dinosaur" />
       <Link to="/">
         <div className="textWrapper">
           <div className="text">
-            100% <br /> ORGANIC&nbsp;
-            <i class="fas fa-seedling" />
+            THANKS TO <br /> 재용님 동생&nbsp;
+            <i class="far fa-thumbs-up" />
           </div>
         </div>
       </Link>

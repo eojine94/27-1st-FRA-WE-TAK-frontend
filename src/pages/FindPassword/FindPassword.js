@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import InputContainer from '../InputContainer/InputContainer';
 import ButtonContainer from '../ButtonContainer/ButtonContainer';
+import { FindPasswordData } from './FindPasswordData';
 import './FindPassword.scss';
 
 function FindPassword() {
@@ -59,27 +60,18 @@ function FindPassword() {
       </div>
       <div className="findPasswordMiddle">
         <form className="findPasswordInput">
-          <InputContainer
-            name="userName"
-            text="Name *"
-            id="name"
-            type="text"
-            onChange={handleInput}
-          />
-          <InputContainer
-            name="userEmail"
-            text="Email(ID) *"
-            id="email"
-            type="text"
-            onChange={handleInput}
-          />
-          <InputContainer
-            name="userPhoneNumber"
-            text="PhoneNumber *"
-            id="phoneNumber"
-            type="text"
-            onChange={handleInput}
-          />
+          {FindPasswordData.map(list => {
+            return (
+              <InputContainer
+                key={list.id}
+                id={list.id}
+                name={list.name}
+                text={list.text}
+                type={list.type}
+                onChange={handleInput}
+              />
+            );
+          })}
         </form>
         <div className="resetPassword">Reset Your Password !</div>
       </div>

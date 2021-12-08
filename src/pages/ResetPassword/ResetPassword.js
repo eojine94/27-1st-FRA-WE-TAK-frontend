@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import InputContainer from '../InputContainer/InputContainer';
 import ButtonContainer from '../ButtonContainer/ButtonContainer';
+import { ResetPasswordData } from './ResetPasswordData';
 import './ResetPassword.scss';
 
 function ResetPassword() {
@@ -63,20 +64,18 @@ function ResetPassword() {
       </div>
       <div className="resetPasswordMiddle">
         <form className="resetPasswordInput">
-          <InputContainer
-            name="userNewPassword"
-            text="New Password *"
-            id="newPassword"
-            type="password"
-            onChange={handleInput}
-          />
-          <InputContainer
-            name="userConfirmPassword"
-            text="Confirm Password *"
-            id="confirmPassword"
-            type="password"
-            onChange={handleInput}
-          />
+          {ResetPasswordData.map(list => {
+            return (
+              <InputContainer
+                key={list.id}
+                id={list.id}
+                name={list.name}
+                text={list.text}
+                type={list.type}
+                onChange={handleInput}
+              />
+            );
+          })}
           <Link to="/login">
             <span className="loginPage line">Go to the Login Page</span>
           </Link>

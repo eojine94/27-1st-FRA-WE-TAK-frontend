@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import ButtonContainer from '../ButtonContainer/ButtonContainer';
 import InputContainer from '../InputContainer/InputContainer';
+import API from '../Config/Config';
+import { SignUpData } from './SignUpData';
 import './SignUp.scss';
 
 function SignUp() {
@@ -53,7 +55,7 @@ function SignUp() {
     if (!getIsActive) {
       alert('please fill in the blanks');
     } else {
-      fetch('http://10.58.5.68:8000/users/signup', {
+      fetch(API.SIGN_UP, {
         method: 'POST',
         body: JSON.stringify({
           name: inputValue.userName,
@@ -73,7 +75,7 @@ function SignUp() {
         });
     }
   };
-
+  console.log(inputValue);
   return (
     <main className="signUp">
       <div className="signUpTop">
@@ -85,41 +87,18 @@ function SignUp() {
       </div>
       <div className="signUpMiddle">
         <form className="signUpInput">
-          <InputContainer
-            name="userName"
-            text="Name *"
-            id="name"
-            type="text"
-            onChange={handleInput}
-          />
-          <InputContainer
-            name="userEmail"
-            text="Email(ID) *"
-            id="email"
-            type="text"
-            onChange={handleInput}
-          />
-          <InputContainer
-            name="userPassword"
-            text="Password *"
-            id="password"
-            type="password"
-            onChange={handleInput}
-          />
-          <InputContainer
-            name="userPhoneNumber"
-            text="PhoneNumber *"
-            id="phoneNumber"
-            type="text"
-            onChange={handleInput}
-          />
-          <InputContainer
-            name="userAddress"
-            text="Address *"
-            id="address"
-            type="text"
-            onChange={handleInput}
-          />
+          {SignUpData.map(list => {
+            return (
+              <InputContainer
+                key={list.id}
+                id={list.id}
+                name={list.name}
+                text={list.text}
+                type={list.type}
+                onChange={handleInput}
+              />
+            );
+          })}
         </form>
         <div className="agreeCheckbox">
           <div className="accountCheckboxAgree">

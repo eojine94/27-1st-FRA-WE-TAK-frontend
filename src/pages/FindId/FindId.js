@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import InputContainer from '../InputContainer/InputContainer';
 import ButtonContainer from '../ButtonContainer/ButtonContainer';
+import { FindIdData } from './FindIdData';
 import './FindId.scss';
 
 function FindId() {
@@ -54,20 +55,18 @@ function FindId() {
       </div>
       <div className="findIdMiddle">
         <form className="findIdInput">
-          <InputContainer
-            name="userName"
-            text="Name *"
-            id="name"
-            type="text"
-            onChange={handleInput}
-          />
-          <InputContainer
-            name="userPhoneNumber"
-            text="PhoneNumber *"
-            id="phoneNumber"
-            type="text"
-            onChange={handleInput}
-          />
+          {FindIdData.map(list => {
+            return (
+              <InputContainer
+                key={list.key}
+                if={list.id}
+                name={list.name}
+                text={list.text}
+                type={list.type}
+                onChange={handleInput}
+              />
+            );
+          })}
           <Link to="/FindPassword">
             <span className="forgotPassword line">Forgot your password?</span>
           </Link>

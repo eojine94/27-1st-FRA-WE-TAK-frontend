@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import ButtonContainer from '../ButtonContainer/ButtonContainer';
 import InputContainer from '../InputContainer/InputContainer';
+import API from '../Config/Config';
+import { LoginData } from './LoginData';
 import './Login.scss';
 
 function Login() {
@@ -29,7 +31,7 @@ function Login() {
     if (!getIsActive) {
       alert('please write a password or email address');
     } else {
-      fetch('http://10.58.5.68:8000/users/login', {
+      fetch(API.LOG_IN, {
         method: 'POST',
         body: JSON.stringify({
           email: inputValue.userEmail,
@@ -40,6 +42,8 @@ function Login() {
         .then(result => {
           if (result.message) {
             navigate('/');
+          } else if (result.access_token) {
+            localStorage.setItem('access_token', result.access_token);
           } else {
             alert('잘못된 정보입니다!');
           }
@@ -54,20 +58,18 @@ function Login() {
       </div>
       <div className="loginMiddle">
         <form className="loginInput">
-          <InputContainer
-            name="userEmail"
-            text="Email(ID) *"
-            id="email"
-            type="text"
-            onChange={handleInput}
-          />
-          <InputContainer
-            name="userPassword"
-            text="Password *"
-            id="password"
-            type="password"
-            onChange={handleInput}
-          />
+          {LoginData.map(list => {
+            return (
+              <InputContainer
+                key={list.id}
+                id={list.id}
+                name={list.name}
+                text={list.text}
+                type={list.type}
+                onChange={handleInput}
+              />
+            );
+          })}
 
           <span className="forgotIDPassword line">
             Forgot your ID or password?

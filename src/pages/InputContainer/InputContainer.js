@@ -4,8 +4,8 @@ import './InputContainer.scss';
 function InputContainer({ id, type, name, onChange, text }) {
   const [focus, setFocus] = useState('');
 
-  const handleFocusBorder = e => {
-    setFocus(e.target.id);
+  const handleFocusBorder = id => {
+    setFocus(id);
   };
 
   return (
@@ -13,11 +13,10 @@ function InputContainer({ id, type, name, onChange, text }) {
       <div className="inputContainer">{text}</div>
       <input
         name={name}
-        id={id}
         type={type}
         className={`inputLine ${focus === id && 'clickedInputLine'}`}
         onChange={onChange}
-        onFocus={e => handleFocusBorder(e)}
+        onFocus={() => handleFocusBorder(id)}
         onBlur={() => setFocus('')}
       />
     </div>

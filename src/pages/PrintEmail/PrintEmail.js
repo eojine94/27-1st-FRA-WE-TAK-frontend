@@ -12,7 +12,7 @@ function PrintEmail() {
   return (
     <main className="printContainer">
       <div className="printEmail">
-        <div className="inputEmail">naeun@gmail.com</div>
+        <div className="inputEmail">naeun123@gmail.com</div>
       </div>
       <div className="buttonContainer">
         <ButtonContainer onClick={goToLogin} type="button" text="GO TO LOGIN" />

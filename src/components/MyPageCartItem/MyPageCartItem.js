@@ -20,7 +20,7 @@ function MyPageCartItem({ setGoToOrder }) {
   // });
 
   useEffect(() => {
-    fetch('http://10.58.1.28:8000/orders/carts', {
+    fetch('/data/cartItem.json', {
       method: 'GET',
       headers: {
         // 토큰을 헤더에 실어서 보내고....
@@ -67,7 +67,9 @@ function MyPageCartItem({ setGoToOrder }) {
     //   )
     // );
 
-    fetch(`http://10.58.1.28:8000/orders/carts/${items[index].cart_id}`, {
+    // http://10.58.1.28:8000/orders/carts/${items[index].cart_id} 밑에 써줘야 할 것
+
+    fetch(`/data/cartItem.json`, {
       method: 'PATCH', // patch 나 post 메서드를 이용
       // headers: {
       //   // 헤더에 토큰을 실어서 날리고...
@@ -96,7 +98,7 @@ function MyPageCartItem({ setGoToOrder }) {
   };
 
   const miusItemNum = index => {
-    fetch(`http://10.58.1.28:8000/orders/carts/${items[index].cart_id}`, {
+    fetch(`/data/cartItem.json`, {
       method: 'PATCH',
       body: JSON.stringify({
         count: items[index].count - 1,
@@ -132,7 +134,7 @@ function MyPageCartItem({ setGoToOrder }) {
   // itemNum === 1 && nonclick;
 
   const deleteItem = index => {
-    fetch(`http://10.58.1.28:8000/orders/carts/${items[index].cart_id}`, {
+    fetch(`/data/cartItem.json`, {
       method: 'DELETE',
       // headers: {
       //   Authorization:

@@ -23,7 +23,7 @@ function SlideShowItem({ productName }) {
       );
     }, DELAY_TIME_MS);
     slideRef.current.style.transform = `translateX(${-index * 10}%)`;
-  }, [index]);
+  }, [index, itemsList.length]);
 
   return (
     <div className="slideShowItem">

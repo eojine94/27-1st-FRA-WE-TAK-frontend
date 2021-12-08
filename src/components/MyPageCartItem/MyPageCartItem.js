@@ -138,14 +138,16 @@ function MyPageCartItem({ setGoToOrder }) {
       //   Authorization:
       //     'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.bHQK7d38oajQKa3Hl8nsYrqDhp9m2fmo_MWjDWMN4Zs',
       // },
-    })
-      .then(res => res.json())
-      .then(data => {
-        data.message === 'DELETED'
-          ? setItems(items.filter(item => item.cart_id !== item[index].cart_id))
-          : alert(data.message);
-      });
+    }).then(res => {
+      res.status === 204 // 벨로그 쓰기(response 메시지?가 안온다)
+        ? setItems(
+            items.filter((item, i) => item.cart_id !== items[index].cart_id)
+          )
+        : alert('실패');
+    });
   };
+
+  // alert(data.message);
 
   // const deleteItem = id => {
   //   return setItems(items.filter(item => item.cart_id !== id));

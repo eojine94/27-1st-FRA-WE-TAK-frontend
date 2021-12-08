@@ -16,19 +16,20 @@
       margin-right: 40px;
     }
 
-    .itemInfoKoreanName,
-    .itemInfoEnglishName {
+    .itemName {
       display: block;
       margin: 10px;
     }
 
     .itemInfoKoreanName {
+      @extend .itemName;
       font-family: $korean-font;
       font-weight: bold;
       font-size: 18px;
     }
 
     .itemInfoEnglishName {
+      @extend .itemName;
       letter-spacing: 1.5px;
       color: rgb(58, 58, 58);
       font-size: $font-small;
@@ -38,8 +39,7 @@
   .myPageItemCount {
     @include flexAlignCenter;
 
-    .plusButton,
-    .miusButton {
+    .countButton {
       display: block;
       width: 20px;
       height: 20px;

@@ -6,23 +6,26 @@
     margin-top: 130px;
     padding: 50px 150px;
 
-    .logOutButton {
-      float: right;
-      margin-right: 150px;
-      padding: 2px;
-      background-color: green;
-      color: $color-white;
-      font-weight: bold;
-      font-size: 18px;
-
-      &:hover {
-        background-color: $color-black;
-      }
-    }
-
     .helloUserEmail {
       font-size: 60px;
       letter-spacing: 2px;
+      display: flex;
+      justify-content: space-between;
+
+      .logOutButton {
+        width: 63px;
+        height: 30px;
+        padding: 2px;
+        margin-right: 70px;
+        background-color: green;
+        color: $color-white;
+        font-weight: bold;
+        font-size: 16px;
+
+        &:hover {
+          background-color: $color-black;
+        }
+      }
     }
 
     .greetUserName {

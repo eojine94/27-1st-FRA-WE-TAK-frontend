@@ -21,8 +21,10 @@ function MyPage() {
   return (
     <div className="mypage">
       <div className="myPageMain">
-        <button className="logOutButton">LogOut</button>
-        <h1 className="helloUserEmail">HELLO {userProfiles.email}</h1>
+        <h1 className="helloUserEmail">
+          HELLO {userProfiles.email}
+          <button className="logOutButton">LogOut</button>
+        </h1>
         <h3 className="greetUserName">
           GREAT TO HAVE &nbsp;
           <span className="koreanName">{userProfiles.name} &nbsp;</span>

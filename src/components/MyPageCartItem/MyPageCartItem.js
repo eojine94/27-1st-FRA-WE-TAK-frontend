@@ -4,6 +4,21 @@ import './MyPageCartItem.scss';
 function MyPageCartItem({ setGoToOrder }) {
   const [items, setItems] = useState([]);
 
+  // 장바구니에 담기 위해서는 먼저 로그인을 해야 한다. 즉 access token 이 필요하다.
+  // 로그인을 하면서 로컬 스토리지에 저장된 access token 을 다시 fetch head 에 담아
+  // post 해야 한다....
+
+  // useEffect(() => {
+  //   fetch('', {
+  //     method: 'POST',
+  //     headers: {
+  //       Authorization:
+  //         'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.pvaoHXfzEKZDOCUnkG9PGaEU995dykNUyOwbwbV2VtM',
+  //       // 위에는 임시값임... Authorization: localStorage.getItem('token'),
+  //     },
+  //   });
+  // });
+
   useEffect(() => {
     fetch('/data/cartItem.json', {
       method: 'GET',
@@ -13,6 +28,17 @@ function MyPageCartItem({ setGoToOrder }) {
         setItems(data.cart_items);
       });
   }, []);
+  // console.log(items[0].cart_id);
+
+  // const deleteData = ({ productId, size }) => {
+  //   fetch('', {
+  //     method: 'DELETE',
+  //     headers: {
+  //       Authorization: localStorage.getItem('token'),
+  //     },
+  //     body: JSON.stringify({}),
+  //   });
+  // };
 
   const plusItemNum = id => {
     // id 를 받아서 아이템 안에 있는 그 id 가진 아이를 찾아서 count 를 변경시켜준다.

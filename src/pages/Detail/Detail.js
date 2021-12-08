@@ -59,18 +59,32 @@ function Detail({ productName, category }) {
             <div className="categoryKoreanName">{itemDetail.kr_name}</div>
             <span className="categoryEnglishName">{itemDetail.en_name}</span>
             <span>,</span>
-            <span className="price">{itemDetail.price}</span>
+            <span className="price">
+              {itemDetail.price && makeSymbolPrice(itemDetail.price)}
+            </span>
             <h4 className="shippingCostDescription">excl shipping cost</h4>
-            <div className="itemDescription">{itemDetail.description_txt}</div>
-            <button className="btnAddToCart">ADD TO CART</button>
+            {/* <h4 className="colorDescription">
+              <i class="fas fa-palette"></i>Color:
+              {itemDetail.sub_category_color}
+            </h4> */}
+            <div className="itemDescription">
+              <i class="far fa-smile-wink"></i>
+              {itemDetail.description_txt}
+            </div>
+            <button className="btnAddToCart">
+              <i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;&nbsp;ADD TO CART
+            </button>
           </div>
         </div>
       </article>
       <article className="warningWrapper">
         <p className="warning">
-          Parts of this product have spent their first life as a truck tarp on
-          the road and are made of PVC. don’t chew, don’t suck, don’t eat.
-          Unsuitable for children under the age of 3.
+          Find the secret key. Labyrinth-like adventures A different world from
+          reality. Fantastic digital world. Spread your wings in your heart. I
+          can’t stop like this With shining hope, Let’s get out of the darkness.
+          Even if you fall into a trap somehow, Even if I’m trapped in the waves
+          of crisis, I want to achieve it as I thought. Wherever we go, wherever
+          we go. Digimon friends. (Let’s go, let’s go)
         </p>
       </article>
       <article className="imageDescriptionWrapper">

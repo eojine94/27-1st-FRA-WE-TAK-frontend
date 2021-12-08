@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@import '../../styles/variables.scss';
 
 .detail {
   position: relative;
@@ -27,22 +27,22 @@
     width: 1440px;
     margin: 0 auto;
 
-
     .categoryKorName {
+      margin-bottom: 20px;
       font-size: 80px;
       padding-left: 100px;
+      font-family: $korean-font;
     }
-
 
     .categoryNameWrapper {
       display: flex;
+      margin-bottom: 60px;
       font-size: 40px;
       padding-left: 100px;
 
       * {
         margin: 10px;
       }
-
     }
 
     .imageInfoContainer {
@@ -61,15 +61,21 @@
 
       .infoWrapper {
         width: 30%;
-        margin: 50px 0px 0px 5%;
+        margin: 50px 0px 0px 100px;
 
         * {
           margin: 12px 0px;
         }
 
         .categoryKoreanName {
+          margin: 16px 0px 38px;
           font-size: 40px;
-          margin: 16px 0px 8px;
+          font-weight: 600;
+          font-family: $korean-font;
+        }
+
+        .categoryEnglishName {
+          letter-spacing: 1px;
         }
 
         span {
@@ -78,7 +84,9 @@
         }
 
         .shippingCostDescription {
-          font-size: 13px;
+          margin-top: 20px;
+          font-size: 15px;
+          color: gray;
         }
 
         .btnAddToCart {
@@ -89,18 +97,53 @@
           color: white;
           font-size: 20px;
         }
+
+        .fa-palette {
+          margin-right: 10px;
+        }
+        .colorDescription {
+          font-size: 18px;
+          letter-spacing: 1.5px;
+        }
+
+        .itemDescription {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 30px;
+          margin-left: -20px;
+          font-size: 18px;
+          font-family: $korean-font;
+        }
+        .fa-smile-wink {
+          margin-right: 18px;
+          font-size: 25px;
+        }
+        .btnAddToCart {
+          margin-top: 20px;
+          height: 50px;
+        }
       }
+    }
+    img {
+      box-shadow: 0px 0px 20px rgb(145, 142, 142);
     }
   }
 
   .warningWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 180px;
+    width: 1000vh;
     height: 200px;
-    line-height: 200px;
+    background-color: lightgray;
+    line-height: 70px;
     width: 100vw;
 
     .warning {
       padding-left: 150px;
-      background-color: lightgray;
       font-size: 20px;
     }
   }

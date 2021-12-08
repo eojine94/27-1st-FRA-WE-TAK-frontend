@@ -2,41 +2,41 @@
   {
     "id": 1,
     "name": "유정란_red",
-    "image_src": "https://w.namu.la/s/9f248e6b3559c5d77d35af3bfe2975258c46b714956e9e02f8a464c913b4365f6ba5d45ec1ebd1c516cd493580200a23ca69983c090359314cde7b69d026ea20f17451906c6b1fae1a5d9d7b73263440"
+    "image_src": "/image/dinosaur1.png"
   },
   {
     "id": 2,
     "name": "유정란_orange",
-    "image_src": "https://upperdeckstore.com/media/catalog/product/cache/1ca5f82ce97242f3d791ab6718041668/8/2/82198_mj_spalding_bkb_slvr_sgfg_2.jpg"
+    "image_src": "/image/dinosaur2.png"
   },
   {
     "id": 3,
     "name": "유정란_yellow",
-    "image_src": "https://w.namu.la/s/9f248e6b3559c5d77d35af3bfe2975258c46b714956e9e02f8a464c913b4365f6ba5d45ec1ebd1c516cd493580200a23ca69983c090359314cde7b69d026ea20f17451906c6b1fae1a5d9d7b73263440"
+    "image_src": "/image/egg1.png"
   },
   {
     "id": 4,
     "name": "유정란_green",
-    "image_src": "https://upperdeckstore.com/media/catalog/product/cache/1ca5f82ce97242f3d791ab6718041668/8/2/82198_mj_spalding_bkb_slvr_sgfg_2.jpg"
+    "image_src": "/image/egg2.png"
   },
   {
     "id": 5,
     "name": "유정란_blue",
-    "image_src": "https://w.namu.la/s/9f248e6b3559c5d77d35af3bfe2975258c46b714956e9e02f8a464c913b4365f6ba5d45ec1ebd1c516cd493580200a23ca69983c090359314cde7b69d026ea20f17451906c6b1fae1a5d9d7b73263440"
+    "image_src": "/image/egg3.png"
   },
   {
     "id": 6,
     "name": "유정란_navy",
-    "image_src": "https://upperdeckstore.com/media/catalog/product/cache/1ca5f82ce97242f3d791ab6718041668/8/2/82198_mj_spalding_bkb_slvr_sgfg_2.jpg"
+    "image_src": "/image/egg4.png"
   },
   {
     "id": 7,
     "name": "유정란_purple",
-    "image_src": "https://w.namu.la/s/9f248e6b3559c5d77d35af3bfe2975258c46b714956e9e02f8a464c913b4365f6ba5d45ec1ebd1c516cd493580200a23ca69983c090359314cde7b69d026ea20f17451906c6b1fae1a5d9d7b73263440"
+    "image_src": "/image/egg5.png"
   },
   {
     "id": 8,
     "name": "유정란_gold",
-    "image_src": "https://upperdeckstore.com/media/catalog/product/cache/1ca5f82ce97242f3d791ab6718041668/8/2/82198_mj_spalding_bkb_slvr_sgfg_2.jpg"
+    "image_src": "/image/egg6.png"
   }
 ]

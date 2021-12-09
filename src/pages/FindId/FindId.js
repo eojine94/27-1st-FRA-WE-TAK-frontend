@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import InputContainer from '../InputContainer/InputContainer';
 import ButtonContainer from '../ButtonContainer/ButtonContainer';
+import API from '../Config/Config';
 import { FindIdData } from './FindIdData';
 import './FindId.scss';
 
@@ -30,7 +31,7 @@ function FindId() {
     if (!getIsActive) {
       alert('please fill the blanks');
     } else {
-      fetch('', {
+      fetch(API.FIND_ID, {
         method: 'POST',
         body: JSON.stringify({
           name: inputValue.userName,
@@ -39,6 +40,7 @@ function FindId() {
       })
         .then(response => response.json())
         .then(result => {
+          console.log(result);
           if (result.message) {
             navigate('/login');
           } else {
@@ -47,7 +49,7 @@ function FindId() {
         });
     }
   };
-
+  console.log(inputValue);
   return (
     <main className="findId">
       <div className="findIdTop">

@@ -15,7 +15,7 @@ function MyPage({ setIsToken }) {
   useEffect(() => {
     if (!localStorage.getItem('access_token')) navigate('/login');
 
-    fetch('http://10.58.3.174:8000/orders/carts', {
+    fetch('http://54.180.112.246:8000/orders/carts', {
       method: 'GET',
       headers: {
         Authorization: localStorage.getItem('access_token'),

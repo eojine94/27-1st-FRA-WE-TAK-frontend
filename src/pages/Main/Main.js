@@ -6,7 +6,7 @@ import './Main.scss';
 function Main() {
   const [mainData, setMainData] = useState([]);
   useEffect(() => {
-    fetch('http://10.58.3.174:8000/products/category')
+    fetch('http://54.180.112.246:8000/products/category')
       .then(res => res.json())
       .then(data => setMainData(data.result));
   }, []);

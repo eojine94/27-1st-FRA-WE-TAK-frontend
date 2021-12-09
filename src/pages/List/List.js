@@ -8,7 +8,7 @@ function List() {
   const [listData, setListData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://10.58.3.174:8000/products`)
+    fetch(`http://54.180.112.246:8000/products`)
       .then(res => res.json())
       .then(data => setListData(data.result));
   }, [main_category_name]);

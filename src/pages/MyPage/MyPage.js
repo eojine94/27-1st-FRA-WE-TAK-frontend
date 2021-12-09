@@ -6,9 +6,6 @@ import MyPageCartItem from '../../components/MyPageCartItem/MyPageCartItem';
 function MyPage({ setIsToken }) {
   const [goToOrder, setGoToOrder] = useState(true);
   const navigate = useNavigate();
-
-  const [userProfiles, setUserProfiles] = useState([]);
-
   const logoutBtn = () => {
     localStorage.removeItem('access_token');
     setIsToken(false);
@@ -16,32 +13,28 @@ function MyPage({ setIsToken }) {
   };
 
   useEffect(() => {
-    fetch('/data/cartItem.json', {
+    if (!localStorage.getItem('access_token')) navigate('/login');
+
+    fetch('http://10.58.3.174:8000/orders/carts', {
       method: 'GET',
       headers: {
-        Authorization: localStorage.getItem('token'),
+        Authorization: localStorage.getItem('access_token'),
       },
     })
       .then(res => res.json())
-      .then(data => {
-        setUserProfiles(data.cart_items[0]);
-      });
-  }, []);
+      .then(data => {});
+  }, [navigate]);
 
   return (
     <div className="mypage">
       <div className="myPageMain">
         <h1 className="helloUserEmail">
-          HELLO {userProfiles.email}
+          HELLO WELCOME TO FREITAK.
           <button className="logOutButton" onClick={logoutBtn}>
             LogOut
           </button>
         </h1>
-        <h3 className="greetUserName">
-          GREAT TO HAVE &nbsp;
-          <span className="koreanName">{userProfiles.name} &nbsp;</span>
-          HERE!
-        </h3>
+        <h3 className="greetUserName">GREAT TO HAVE YOU HERE!</h3>
         <p className="myPageText">
           Here you can keep track of your orders, edit your account and get
           access to more services we will be adding over time.

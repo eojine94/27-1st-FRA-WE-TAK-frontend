@@ -5,11 +5,9 @@ import './Nav.scss';
 
 function Nav({ isToken }) {
   const [cartLayout, setCartLayout] = useState(false);
-
   const openCartMenu = () => {
     setCartLayout(true);
   };
-
   const closeCartMenu = () => {
     setCartLayout(false);
   };
@@ -43,7 +41,9 @@ function Nav({ isToken }) {
         <ul className="navIcon">
           {isToken === true ? (
             <li className="icon">
-              <i className="fas fa-user" />
+              <Link to="/my-page">
+                <i className="fas fa-user" />
+              </Link>
             </li>
           ) : (
             <>
@@ -71,5 +71,4 @@ function Nav({ isToken }) {
     </>
   );
 }
-
 export default Nav;

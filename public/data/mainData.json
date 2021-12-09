@@ -1,67 +1,67 @@
 {
   "result": [
     {
-      "name": "dinosaur",
+      "name": "Dinosaur",
       "sub_category_list": [
         {
           "id": 6,
-          "kr_name": "백악기",
-          "thumbnail_url": "https://starsportsmall.co.kr/data/rental/goods/middle/imgB_1_20200107pm43039.jpg"
+          "kr_name": "구석기",
+          "thumbnail_url": "https://media.vlpt.us/images/jincastle/post/d9e615f4-b2bd-4451-b7ba-f6abe1845c52/%E1%84%80%E1%85%AE%E1%84%89%E1%85%A5%E1%86%A8%E1%84%80%E1%85%B5.jpg"
         },
         {
           "id": 7,
-          "kr_name": "신석기",
-          "thumbnail_url": "http://image.auction.co.kr/itemimage/18/f3/b8/18f3b8bb76.jpg"
+          "kr_name": "백악기",
+          "thumbnail_url": "https://media.vlpt.us/images/jincastle/post/f95399d8-cf77-455a-9dad-02d99c0cca5e/%E1%84%87%E1%85%A2%E1%86%A8%E1%84%8B%E1%85%A1%E1%86%A8%E1%84%80%E1%85%B5.jpg"
         },
         {
           "id": 8,
-          "kr_name": "구석기",
-          "thumbnail_url": "http://moltenkorea.co.kr/web/product/big/201705/86_shop1_813183.jpg"
+          "kr_name": "쥬라기",
+          "thumbnail_url": "https://media.vlpt.us/images/jincastle/post/93d9d470-350f-4b0d-a67d-13c7988e8219/%E1%84%8C%E1%85%B2%E1%84%85%E1%85%A1%E1%84%80%E1%85%B5.jpg"
         },
         {
           "id": 9,
-          "kr_name": "중석기",
-          "thumbnail_url": "https://contents.lotteon.com/itemimage/LD/49/85/18/93/1_/0/LD498518931_0_3.jpg/dims/resizef/720X720"
+          "kr_name": "기린기",
+          "thumbnail_url": "https://media.vlpt.us/images/jincastle/post/5efd5ed5-8c3a-44f4-989c-d6d8843b9213/%E1%84%80%E1%85%B5%E1%84%85%E1%85%B5%E1%86%AB%E1%84%80%E1%85%B5.jpg"
         },
         {
           "id": 10,
           "kr_name": "포켓몬스터",
-          "thumbnail_url": "https://lh3.googleusercontent.com/proxy/fEUWbtiuza-ywEMRmr_51RL6vGDaQmUJatY4jYWf0zDIASMtu4V7hJrzGb4ZbjL1-Qt8brI59Qf9RcVCe_IXDV7nsQLBkK07taXscXBzDBa_Hth2e8HD8MI4SuVqjxA_ffyd-bucFYzmdrvWGgDEpLf2uHwBVCgZw7kWUg"
+          "thumbnail_url": "https://media.vlpt.us/images/jincastle/post/97b9afdc-edb1-44b7-8fdb-d15de600a6e6/%E1%84%91%E1%85%A9%E1%84%8F%E1%85%A6%E1%86%BA%E1%84%86%E1%85%A9%E1%86%AB.jpeg"
         },
         {
           "id": 11,
           "kr_name": "디지몬",
-          "thumbnail_url": "https://pbs.twimg.com/media/EF8hpn6UEAEtUVI.png"
+          "thumbnail_url": "https://media.vlpt.us/images/jincastle/post/d4d5999c-96af-4f6a-a8ca-77d55455f0fc/%E1%84%83%E1%85%B5%E1%84%8C%E1%85%B5%E1%84%86%E1%85%A9%E1%86%AB.jpg"
         }
       ]
     },
     {
-      "name": "chicken",
+      "name": "Chicken",
       "sub_category_list": [
         {
           "id": 1,
           "kr_name": "유정란",
-          "thumbnail_url": "https://blog.kakaocdn.net/dn/7zbcK/btqxdRyJtMo/5kVEGPO0464iRzq3Ou7tj1/img.png"
+          "thumbnail_url": "https://media.vlpt.us/images/jincastle/post/115c9c0e-dc8e-4987-bd36-f709d777c387/%E1%84%8B%E1%85%B2%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A1%E1%86%AB%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5%E1%84%85%E1%85%A9%E1%86%BC.jpg"
         },
         {
           "id": 2,
           "kr_name": "맥반석 계란",
-          "thumbnail_url": "http://m.tastyfood.co.kr/web/product/big/201805/164_shop1_707894.jpg"
+          "thumbnail_url": "https://media.vlpt.us/images/jincastle/post/f2be6a1d-1d1d-4bd6-b6bf-aa4ac9a19213/%E1%84%86%E1%85%A2%E1%86%A8%E1%84%87%E1%85%A1%E1%86%AB%E1%84%89%E1%85%A5%E1%86%A8%E1%84%85%E1%85%A1%E1%86%AB%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5%E1%84%85%E1%85%A9%E1%86%BC.jpg"
         },
         {
           "id": 3,
           "kr_name": "클로렐라란",
-          "thumbnail_url": "https://png.pngtree.com/png-vector/20210121/ourlarge/pngtree-3d-green-egg-with-circle-png-image_2772221.jpg"
+          "thumbnail_url": "https://media.vlpt.us/images/jincastle/post/fb2ea455-2c72-45e2-a8fb-66fe138ef471/%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A9%E1%84%85%E1%85%A1%E1%86%AB%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5%E1%84%85%E1%85%A9%E1%86%BC%20(1).jpg"
         },
         {
           "id": 4,
           "kr_name": "청계란",
-          "thumbnail_url": "https://previews.123rf.com/images/issumbosi/issumbosi1608/issumbosi160800018/61725544-vector-blaues-ei-shiny-metallic-blau-osterei-symbol-auf-wei%C3%9Fem-hintergrund-.jpg"
+          "thumbnail_url": "https://media.vlpt.us/images/jincastle/post/b771741b-a477-47dd-8cf8-3c7af85d4956/%E1%84%8E%E1%85%A5%E1%86%BC%E1%84%80%E1%85%A8%E1%84%85%E1%85%A1%E1%86%AB%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5%E1%84%85%E1%85%A9%E1%86%BC.jpg"
         },
         {
           "id": 5,
           "kr_name": "머머리란",
-          "thumbnail_url": "https://blog.kakaocdn.net/dn/cMmXoB/btqDp200P63/33JKhs4oUT1KkplW7VaCsk/img.jpg"
+          "thumbnail_url": "https://media.vlpt.us/images/jincastle/post/02a16bff-8436-4b9b-aa49-1a498970d9b9/%E1%84%86%E1%85%A5%E1%84%86%E1%85%A5%E1%84%85%E1%85%B5%E1%84%85%E1%85%A1%E1%86%AB%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5%E1%84%85%E1%85%A9%E1%86%BC.jpg"
         }
       ]
     }

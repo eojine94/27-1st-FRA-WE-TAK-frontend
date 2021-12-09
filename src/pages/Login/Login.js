@@ -40,11 +40,10 @@ function Login({ setIsToken }) {
       })
         .then(response => response.json())
         .then(result => {
-          if (result.message) {
-            navigate('/');
-          } else if (result.access_token) {
-            localStorage.setItem('access_token', result.access_token);
+          if (result.message === 'success') {
+            localStorage.setItem('access_token', result.token);
             setIsToken(true);
+            navigate('/');
           } else {
             alert('잘못된 정보입니다!');
           }

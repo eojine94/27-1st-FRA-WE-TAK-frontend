@@ -5,7 +5,7 @@ function CartItem() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch('/data/navbarCartItem.json', {
+    fetch('http://10.58.3.174:8000/orders/carts', {
       method: 'GET',
       headers: {
         Authorization: localStorage.getItem('access_token'),

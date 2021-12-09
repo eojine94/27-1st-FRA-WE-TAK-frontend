@@ -49,6 +49,7 @@ function Detail({ productName, category }) {
           <div className="imageWrapper">
             {[...Array(4)].map(() => (
               <img
+                className="descriptionImage"
                 key={itemDetail.product_id}
                 src={itemDetail.description_img}
                 alt={itemDetail.kr_name}
@@ -63,16 +64,13 @@ function Detail({ productName, category }) {
               {itemDetail.price && makeSymbolPrice(itemDetail.price)}
             </span>
             <h4 className="shippingCostDescription">excl shipping cost</h4>
-            {/* <h4 className="colorDescription">
-              <i class="fas fa-palette"></i>Color:
-              {itemDetail.sub_category_color}
-            </h4> */}
             <div className="itemDescription">
-              <i class="far fa-smile-wink"></i>
+              <i class="far fa-smile-wink" />
               {itemDetail.description_txt}
             </div>
             <button className="btnAddToCart">
-              <i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;&nbsp;ADD TO CART
+              <i class="fas fa-shopping-cart" />
+              &nbsp;&nbsp;&nbsp;ADD TO CART
             </button>
           </div>
         </div>

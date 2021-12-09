@@ -13,12 +13,16 @@
     .classification {
       padding: 0px 150px;
 
-      * {
+      %box {
         display: inline-block;
         font-weight: 800;
         font-size: 15px;
         margin-right: 5px;
         letter-spacing: 1px;
+      }
+
+      * {
+        @extend %box;
       }
     }
   }
@@ -125,8 +129,12 @@
         }
       }
     }
-    img {
-      box-shadow: 0px 0px 20px rgb(145, 142, 142);
+
+    .descriptionImage:nth-child(2) {
+      transform: rotate(180deg);
+    }
+    .descriptionImage:nth-child(3) {
+      transform: rotate(180deg);
     }
   }
 
@@ -139,7 +147,8 @@
     width: 1000vh;
     height: 200px;
     background-color: lightgray;
-    line-height: 70px;
+    line-height: 30px;
+    overflow: scroll;
     width: 100vw;
 
     .warning {

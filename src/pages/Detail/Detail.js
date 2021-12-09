@@ -8,7 +8,7 @@ function Detail() {
   const [itemDetail, setItemDetail] = useState({});
 
   useEffect(() => {
-    fetch(`http://10.58.3.174:8000/products/${product_id}`)
+    fetch(`http://54.180.112.246:8000/products/${product_id}`)
       .then(res => res.json())
       .then(data => {
         setItemDetail(data.result);
@@ -16,7 +16,7 @@ function Detail() {
   }, [product_id]);
 
   const addToCart = () => {
-    fetch('http://10.58.3.174:8000/orders/carts', {
+    fetch('http://54.180.112.246:8000/orders/carts', {
       method: 'POST',
       headers: {
         Authorization: localStorage.getItem('access_token'),
@@ -32,8 +32,6 @@ function Detail() {
           alert('장바구니에 정상적으로 담겼습니다.');
       });
   };
-
-  console.log(itemDetail);
 
   return (
     <div className="detail">
@@ -101,7 +99,7 @@ function Detail() {
                   <i class="far fa-smile-wink" />
                   {itemDetail.title}
                 </div>
-                <div className="itemRatting">{`${itemDetail.rating} / 10`}</div>
+                <div className="itemRatting">{`RATING : ${itemDetail.rating} / 10`}</div>
                 <button className="btnAddToCart" onClick={addToCart}>
                   <i class="fas fa-shopping-cart" />
                   &nbsp;&nbsp;&nbsp;ADD TO CART

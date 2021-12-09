@@ -5,7 +5,7 @@ function MyPageCartItem({ setGoToOrder }) {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch('http://10.58.3.174:8000/orders/carts', {
+    fetch('http://54.180.112.246:8000/orders/carts', {
       method: 'GET',
       headers: {
         Authorization: localStorage.getItem('access_token'),
@@ -18,9 +18,9 @@ function MyPageCartItem({ setGoToOrder }) {
   }, []);
 
   const plusItemNum = index => {
-    // http://10.58.1.28:8000/orders/carts/${items[index].cart_id} 밑에 써줘야 할 것
+    // http:/54.180.112.246:8000/orders/carts/${items[index].cart_id} 밑에 써줘야 할 것
 
-    fetch(`http://10.58.3.174:8000/orders/carts/${items[index].cart_id}`, {
+    fetch(`http://54.180.112.246:8000/orders/carts/${items[index].cart_id}`, {
       method: 'PATCH',
       headers: {
         Authorization: localStorage.getItem('access_token'),
@@ -47,7 +47,7 @@ function MyPageCartItem({ setGoToOrder }) {
   };
 
   const miusItemNum = index => {
-    fetch(`http://10.58.3.174:8000/orders/carts/${items[index].cart_id}`, {
+    fetch(`http://54.180.112.246:8000/orders/carts/${items[index].cart_id}`, {
       method: 'PATCH',
       headers: {
         Authorization: localStorage.getItem('access_token'),
@@ -74,7 +74,7 @@ function MyPageCartItem({ setGoToOrder }) {
   };
 
   const deleteItem = index => {
-    fetch(`http://10.58.3.174:8000/orders/carts/${items[index].cart_id}`, {
+    fetch(`http://54.180.112.246:8000/orders/carts/${items[index].cart_id}`, {
       method: 'DELETE',
       headers: {
         Authorization: localStorage.getItem('access_token'),
@@ -131,7 +131,7 @@ function MyPageCartItem({ setGoToOrder }) {
             </div>
             <div className="myPageItemPrice">
               <span className="myPageCartItemPrice">
-                {`￦ ${item.product_price * item.count}`}
+                {`$ ${item.product_price * item.count}`}
               </span>
             </div>
             <div className="myPageItemDelete">

@@ -24,7 +24,7 @@ function Main() {
       {nameAndCtgrList[1] && (
         <SlideShowItem
           productName="chicken"
-          sub_category_list={nameAndCtgrList[1].sub_category_list}
+          subCategoryList={nameAndCtgrList[1].sub_category_list}
         />
       )}
       <Link to="/">
@@ -38,7 +38,7 @@ function Main() {
       {nameAndCtgrList[0] && (
         <SlideShowItem
           productName="dinosaur"
-          sub_category_list={nameAndCtgrList[0].sub_category_list}
+          subCategoryList={nameAndCtgrList[0].sub_category_list}
         />
       )}
       <Link to="/">

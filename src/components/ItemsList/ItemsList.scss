@@ -1,7 +1,7 @@
 @import "../../styles/variables.scss";
 
 .itemsList {
-  margin: 40px 0px;
+  margin: 60px 0px;
   padding: 10px 150px;
 
   .categoryName {
@@ -17,11 +17,5 @@
 
   .imageWrapper {
     margin-top: 20px;
-
-    .itemsImage {
-      width: 200px;
-      height: 200px;
-      margin: 10px 5px 10px 0px;
-    }
   }
 }

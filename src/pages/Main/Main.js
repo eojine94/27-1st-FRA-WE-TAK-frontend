@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SlideShowItem from '../../components/SlideShowItem/SlideShowItem';
 import './Main.scss';
 
 function Main() {
+  const [mainData, setMainData] = useState([]);
+  useEffect(() => {
+    fetch('/data/mainData.json')
+      .then(res => res.json())
+      .then(data => setMainData(data.result));
+  }, []);
+
   return (
     <div className="main">
       <Link to="/">
@@ -14,7 +21,12 @@ function Main() {
           </div>
         </div>
       </Link>
-      <SlideShowItem />
+      {mainData[1] && (
+        <SlideShowItem
+          mainCategoryName={mainData[1].name}
+          subCategoryList={mainData[1].sub_category_list}
+        />
+      )}
       <Link to="/">
         <div className="textWrapper">
           <div className="text">
@@ -23,7 +35,12 @@ function Main() {
           </div>
         </div>
       </Link>
-      <SlideShowItem />
+      {mainData[0] && (
+        <SlideShowItem
+          mainCategoryName={mainData[0].name}
+          subCategoryList={mainData[0].sub_category_list}
+        />
+      )}
       <Link to="/">
         <div className="textWrapper">
           <div className="text">

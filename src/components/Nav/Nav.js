@@ -27,29 +27,34 @@ function Nav() {
   };
 
   return (
-    <>
-      <div className="nav">
-        <Link to="/">
-          <div className="navTitle">
-            <span className="greenColor">Frei</span>tak
-            <span className="greenColor">.</span>
-          </div>
+    <div className="nav">
+      <Link to="/">
+        <div className="navTitle">
+          <span className="greenColor">Frei</span>tak
+          <span className="greenColor">.</span>
+        </div>
+      </Link>
+      <ul className="navMenu">
+        <Link to="/list/chicken">
+          <li className="menu">CHICKEN</li>
         </Link>
-        <ul className="navMenu">
-          <Link to="/list-chicken">
-            <li className="menu">CHICKEN</li>
-          </Link>
-          <Link to="/">
-            <li className="eggLogo">
-              <img
-                className="eggLogoImg"
-                src="/image/egg_character2.jpg"
-                alt="eggLogo"
-              />
-            </li>
-          </Link>
-          <Link to="/list-dinosaur">
-            <li className="menu">DINOSAUR</li>
+        <Link to="/">
+          <li className="eggLogo">
+            <img
+              className="eggLogoImg"
+              src="/image/egg_character2.jpg"
+              alt="eggLogo"
+            />
+          </li>
+        </Link>
+        <Link to="/list/dinosaur">
+          <li className="menu">DINOSAUR</li>
+        </Link>
+      </ul>
+      <ul className="navIcon">
+        <li className="icon">
+          <Link to="/my-page">
+            <i className="fas fa-user" />
           </Link>
         </ul>
         <ul className="navIcon">
@@ -65,7 +70,7 @@ function Nav() {
         </ul>
       </div>
       {cartLayout && <Cart closeCartMenu={closeCartMenu} />}
-    </>
+    </div>
   );
 }
 

@@ -58,7 +58,12 @@
           width: 50%;
         }
       }
-
+      .descriptionImage:nth-child(2) {
+        transform: rotate(180deg);
+      }
+      .descriptionImage:nth-child(3) {
+        transform: rotate(180deg);
+      }
       .infoWrapper {
         width: 30%;
         margin: 50px 0px 0px 100px;
@@ -84,7 +89,7 @@
         }
 
         .price {
-          font-size: 24px
+          font-size: 24px;
         }
 
         .shippingCostDescription {
@@ -132,12 +137,7 @@
         }
       }
     }
-
-    img {
-      box-shadow: 0px 0px 20px rgb(145, 142, 142);
-    }
   }
-
   .warningWrapper {
     display: flex;
     flex-wrap: wrap;

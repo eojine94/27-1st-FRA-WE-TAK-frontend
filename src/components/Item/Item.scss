@@ -3,10 +3,14 @@
 .item {
   display: inline-block;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   .slide {
     display: inline-block;
     height: 400px;
-    width: 100%;
+    width: 400px;
     margin: 10px 5px;
   }
 }

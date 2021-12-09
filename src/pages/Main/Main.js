@@ -4,11 +4,11 @@ import SlideShowItem from '../../components/SlideShowItem/SlideShowItem';
 import './Main.scss';
 
 function Main() {
-  const [nameAndCtgrList, setNameAndCtgrList] = useState([]);
+  const [mainData, setMainData] = useState([]);
   useEffect(() => {
     fetch('/data/mainData.json')
       .then(res => res.json())
-      .then(data => setNameAndCtgrList(data.result));
+      .then(data => setMainData(data.result));
   }, []);
 
   return (
@@ -21,10 +21,10 @@ function Main() {
           </div>
         </div>
       </Link>
-      {nameAndCtgrList[1] && (
+      {mainData[1] && (
         <SlideShowItem
-          productName="chicken"
-          subCategoryList={nameAndCtgrList[1].sub_category_list}
+          mainCategoryName={mainData[1].name}
+          subCategoryList={mainData[1].sub_category_list}
         />
       )}
       <Link to="/">
@@ -35,10 +35,10 @@ function Main() {
           </div>
         </div>
       </Link>
-      {nameAndCtgrList[0] && (
+      {mainData[0] && (
         <SlideShowItem
-          productName="dinosaur"
-          subCategoryList={nameAndCtgrList[0].sub_category_list}
+          mainCategoryName={mainData[0].name}
+          subCategoryList={mainData[0].sub_category_list}
         />
       )}
       <Link to="/">

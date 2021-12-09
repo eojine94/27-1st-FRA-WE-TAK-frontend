@@ -1,35 +1,148 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './MyPageCartItem.scss';
 
-function MyPageCartItem() {
+function MyPageCartItem({ setGoToOrder }) {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch('/data/cartItem.json', {
+      method: 'GET',
+      headers: {
+        Authorization: localStorage.getItem('token'),
+      },
+    })
+      .then(res => res.json())
+      .then(data => {
+        setItems(data.cart_items);
+      });
+  }, []);
+
+  const plusItemNum = index => {
+    // http://10.58.1.28:8000/orders/carts/${items[index].cart_id} 밑에 써줘야 할 것
+
+    fetch(`/data/cartItem.json`, {
+      method: 'PATCH',
+      headers: {
+        Authorization: localStorage.getItem('token'),
+      },
+      body: JSON.stringify({
+        count: items[index].count + 1,
+      }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        data.message === 'SUCCESS'
+          ? setItems(
+              items.map((item, i) =>
+                item.cart_id === items[index].cart_id
+                  ? {
+                      ...item,
+                      count: item.count + 1,
+                    }
+                  : item
+              )
+            )
+          : alert(data.message);
+      });
+  };
+
+  const miusItemNum = index => {
+    fetch(`/data/cartItem.json`, {
+      method: 'PATCH',
+      body: JSON.stringify({
+        count: items[index].count - 1,
+      }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        data.message === 'SUCCESS'
+          ? setItems(
+              items.map((item, i) =>
+                item.cart_id === items[index].cart_id && item.count !== 1
+                  ? {
+                      ...item,
+                      count: item.count - 1,
+                    }
+                  : item
+              )
+            )
+          : alert(data.message);
+      });
+  };
+
+  const deleteItem = index => {
+    fetch(`/data/cartItem.json`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: localStorage.getItem('token'),
+      },
+    }).then(res => {
+      res.status === 204
+        ? setItems(
+            items.filter((item, i) => item.cart_id !== items[index].cart_id)
+          )
+        : alert('실패');
+    });
+  };
+
   return (
-    <li className="myPageCartItem">
-      <div className="myPageCartItemInfo">
-        <img
-          className="myPageCartItemPhoto"
-          src="../../image/logo.png"
-          alt="eggItem"
-        />
-        <div className="itemInfoList">
-          <span className="itemInfoKoreanName">한국이름</span>
-          <span className="itemInfoEnglishName">EnglishName</span>
-          <span className="itemInfoSubCategory">유정란</span>
-        </div>
-      </div>
-      <div className="myPageItemCount">
-        <span className="myPageCartItemNum">2</span>
-        <div className="ItemCountButton">
-          <button className="plusButton">+</button>
-          <button className="miusButton">-</button>
-        </div>
-      </div>
-      <div className="myPageItemPrice">
-        <span className="myPageCartItemPrice">100,000</span>
-      </div>
-      <div className="myPageItemDelete">
-        <button className="deleteButton">X</button>
-      </div>
-    </li>
+    <div>
+      {items.length === 0 && (
+        <div className="noMyPageCartItem">장바구니에 담긴 상품이 없습니다</div>
+      )}
+      {items.length === 0 && setGoToOrder(false)}
+      {items.map((item, index) => {
+        return (
+          <li className="myPageCartItem" key={index}>
+            <div className="myPageCartItemInfo">
+              <img
+                className="myPageCartItemPhoto"
+                src={item.product_image}
+                alt="eggItem"
+              />
+              <div className="itemInfoList">
+                <span className="itemInfoKoreanName">
+                  {item.product_kr_name}
+                </span>
+                <span className="itemInfoEnglishName">
+                  {item.product_en_name}
+                </span>
+              </div>
+            </div>
+            <div className="myPageItemCount">
+              <span className="myPageCartItemNum">{item.count}</span>
+              <div className="ItemCountButton">
+                <button
+                  className="countButton"
+                  onClick={() => plusItemNum(index)}
+                >
+                  +
+                </button>
+                <button
+                  className="countButton"
+                  onClick={() => miusItemNum(index)}
+                >
+                  -
+                </button>
+              </div>
+            </div>
+            <div className="myPageItemPrice">
+              <span className="myPageCartItemPrice">
+                {`￦ ${item.product_price * item.count}`}
+              </span>
+            </div>
+            <div className="myPageItemDelete">
+              <button
+                className="deleteButton"
+                onClick={() => deleteItem(index)}
+              >
+                X
+              </button>
+            </div>
+          </li>
+        );
+      })}
+    </div>
   );
 }
 

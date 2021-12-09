@@ -24,7 +24,7 @@ function Nav({ isToken }) {
           </div>
         </Link>
         <ul className="navMenu">
-          <Link to="/list-chicken">
+          <Link to="/list/chicken">
             <li className="menu">CHICKEN</li>
           </Link>
           <Link to="/">
@@ -36,7 +36,7 @@ function Nav({ isToken }) {
               />
             </li>
           </Link>
-          <Link to="/list-dinosaur">
+          <Link to="/list/dinosaur">
             <li className="menu">DINOSAUR</li>
           </Link>
         </ul>

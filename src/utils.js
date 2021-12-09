@@ -1,7 +1,5 @@
-export default function makeSymbolPrice(price) {
-  const stringPrice = price.toString();
-  const lastStringPrice = stringPrice.slice(-3);
-  const firstStringPrice = stringPrice.slice(0, -3);
+export default function numToPrice(num) {
+  const resultNumber = num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
-  return `₩ ${firstStringPrice},${lastStringPrice}`;
+  return `$ ${resultNumber}`;
 }

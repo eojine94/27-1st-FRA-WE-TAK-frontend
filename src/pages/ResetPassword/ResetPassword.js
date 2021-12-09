@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import ButtonContainer from '../ButtonContainer/ButtonContainer';
 import InputContainer from '../InputContainer/InputContainer';
-import API from '../Config/Config';
-import { LoginData } from './LoginData';
-import './Login.scss';
+import ButtonContainer from '../ButtonContainer/ButtonContainer';
+import { ResetPasswordData } from './ResetPasswordData';
+import './ResetPassword.scss';
 
-function Login({ setIsToken }) {
+function ResetPassword() {
   const navigate = useNavigate();
 
   const [inputValue, setInputValue] = useState({
-    userEmail: '',
-    userPassword: '',
+    userNewPassword: '',
+    userConfirmPassword: '',
   });
 
-  const { userEmail, userPassword } = inputValue;
+  const { userNewPassword, userConfirmPassword } = inputValue;
 
   const handleInput = event => {
     const { name, value } = event.target;
@@ -25,26 +24,32 @@ function Login({ setIsToken }) {
     });
   };
 
-  const getIsActive = userEmail.length >= 1 && userPassword.length >= 1;
+  const passwordReg = new RegExp(
+    '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&])(?=.*[0-9])[A-Za-z\\d$@$!%*?&]{8,45}'
+  );
+  const isValidPassword = userNewPassword === userConfirmPassword;
+
+  const getIsActive =
+    passwordReg.test(userNewPassword) &&
+    passwordReg.test(userConfirmPassword) &&
+    isValidPassword;
 
   const handleButtonValid = () => {
     if (!getIsActive) {
-      alert('please write a password or email address');
+      alert('please fill the blanks');
     } else {
-      fetch(API.LOG_IN, {
+      fetch('', {
         method: 'POST',
         body: JSON.stringify({
+          name: inputValue.userName,
           email: inputValue.userEmail,
-          password: inputValue.userPassword,
+          contact: inputValue.userPhoneNumber,
         }),
       })
         .then(response => response.json())
         .then(result => {
           if (result.message) {
             navigate('/');
-          } else if (result.access_token) {
-            localStorage.setItem('access_token', result.access_token);
-            setIsToken(true);
           } else {
             alert('잘못된 정보입니다!');
           }
@@ -53,13 +58,13 @@ function Login({ setIsToken }) {
   };
 
   return (
-    <main className="login">
-      <div className="loginTop">
-        <h1 className="loginTitle">LOG IN YOUR USER ACCOUNT</h1>
+    <main className="resetPassword">
+      <div className="resetPasswordTop">
+        <h1 className="resetPasswordTitle">RESET YOUR PASSWORD</h1>
       </div>
-      <div className="loginMiddle">
-        <form className="loginInput">
-          {LoginData.map(list => {
+      <div className="resetPasswordMiddle">
+        <form className="resetPasswordInput">
+          {ResetPasswordData.map(list => {
             return (
               <InputContainer
                 key={list.id}
@@ -71,28 +76,21 @@ function Login({ setIsToken }) {
               />
             );
           })}
-
-          <span className="forgotIDPassword line">
-            Forgot your ID or password?
-          </span>
+          <Link to="/login">
+            <span className="loginPage line">Go to the Login Page</span>
+          </Link>
         </form>
       </div>
-      <div className="loginBottom">
+      <div className="resetPasswordBottom">
         <ButtonContainer
           getIsActive={getIsActive}
           onClick={handleButtonValid}
           type="button"
-          text="LOG IN"
+          text="Submit"
         />
-        <span className="join">
-          Not a member yet?
-          <Link to="/signup">
-            <span className="line">Join us.</span>
-          </Link>
-        </span>
       </div>
     </main>
   );
 }
 
-export default Login;
+export default ResetPassword;

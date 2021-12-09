@@ -1,0 +1,13 @@
+@import '../../styles/variables.scss';
+
+.inputLine {
+  margin: 20px 0 30px 0;
+  width: 350px;
+  border-bottom: 2px solid black;
+}
+
+.clickedInputLine {
+  margin: 20px 0 30px 0;
+  width: 350px;
+  border-bottom: 2px solid #adc088;
+}

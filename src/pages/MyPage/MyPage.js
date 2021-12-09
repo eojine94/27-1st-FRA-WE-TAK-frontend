@@ -6,30 +6,24 @@ import MyPageCartItem from '../../components/MyPageCartItem/MyPageCartItem';
 function MyPage() {
   const [goToOrder, setGoToOrder] = useState(true);
   const navigate = useNavigate();
-  // console.log(goToOrder);
 
   const [userProfiles, setUserProfiles] = useState([]);
 
   const logoutBtn = () => {
     localStorage.removeItem('access_token');
     navigate('/');
-    // 그리고 메인페이지로 이동
   };
 
-  // 이거는 인증값을 무조건 받아야 하니까 써야 함
-  // 그러니까 데이터를 받아올 수 있는 것?
   useEffect(() => {
     fetch('/data/cartItem.json', {
       method: 'GET',
       headers: {
-        // 토큰을 헤더에 실어서 보내고....
-        // Authorization:
-        //   'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.bHQK7d38oajQKa3Hl8nsYrqDhp9m2fmo_MWjDWMN4Zs',
+        Authorization: localStorage.getItem('token'),
       },
     })
-      .then(res => res.json()) // 백엔드에 요청 -> 그걸 json 형식으로 변경...
+      .then(res => res.json())
       .then(data => {
-        setUserProfiles(data.cart_items[0]); // 데이터를 setItems 에 저장
+        setUserProfiles(data.cart_items[0]);
       });
   }, []);
 

@@ -29,7 +29,7 @@ function FindId() {
 
   const handleButtonValid = () => {
     if (!getIsActive) {
-      alert('please fill the blanks');
+      alert('please fill in the blanks');
     } else {
       fetch(API.FIND_ID, {
         method: 'POST',
@@ -38,10 +38,11 @@ function FindId() {
           contact: inputValue.userPhoneNumber,
         }),
       })
-        .then(response => response.json())
-        .then(result => {
-          if (result.message) {
-            navigate('/login');
+        .then(res => res.json())
+        .then(res => {
+          if (res.result?.[0]) {
+            navigate('/print-email', { state: res.result[0] });
+            console.log(res.result[0]);
           } else {
             alert('잘못된 정보입니다!');
           }

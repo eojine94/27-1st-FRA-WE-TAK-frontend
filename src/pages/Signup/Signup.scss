@@ -33,19 +33,7 @@
       font-weight: 300;
       letter-spacing: 0.5px;
     }
-
-    .inputLine {
-      margin-bottom: 20px;
-      width: 350px;
-      border-bottom: 2px solid black;
-    }
-
-    .clickedInputLine {
-      margin-bottom: 20px;
-      width: 350px;
-      border-bottom: 2px solid #adc088;
-    }
-
+    
     .agreeCheckbox {
       display: flex;
       flex-direction: column;
@@ -78,24 +66,7 @@
   .signUpBottom {
     display: flex;
     flex-direction: column;
-
-    .signUpButtonAction {
-      width: 250px;
-      height: 55px;
-      background-color: black;
-      color: white;
-      font-size: 17px;
-      font-weight: 700;
-    }
-
-    .signUpButtonInaction {
-      width: 250px;
-      height: 55px;
-      background-color: rgb(128, 123, 123);
-      color: white;
-      font-size: 17px;
-      font-weight: 700;
-    }
+    align-items: flex-start;
 
     .alreadyConfirm {
       margin-top: 10px;

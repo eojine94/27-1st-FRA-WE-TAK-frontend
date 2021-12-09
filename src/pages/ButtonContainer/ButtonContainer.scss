@@ -1,0 +1,18 @@
+@import '../../styles/variables.scss';
+
+%buttonContainer {
+  height: 50px;
+  padding: 10px 30px;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.buttonAction {
+  @extend %buttonContainer;
+  background-color: black;
+}
+.buttonInaction {
+  @extend %buttonContainer;
+  background-color: rgb(128, 123, 123);
+}

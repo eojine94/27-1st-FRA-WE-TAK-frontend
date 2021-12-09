@@ -1,33 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Item from '../Item/Item';
-import makeSymbolPrice from '../../utils';
+import numToPrice from '../../utils';
 import './ItemsList.scss';
-const REPEATING_NUNBER = 3;
+const REPEATING_NUNBER = 2;
 
-function ItemsList({ category, price }) {
-  const [itemsList, setItemsList] = useState([]);
-
-  useEffect(() => {
-    fetch('/data/itemListData.json', {
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(data => setItemsList(data));
-  }, []);
+function ItemsList({ sub_category_name, price, listData }) {
+  const subCategoryList = listData.filter(
+    el => el.sub_category_name === `${sub_category_name}`
+  );
 
   return (
     <div className="itemsList">
-      <h2 className="categoryName">{category}</h2>
-      <h4 className="categoryPrice">{makeSymbolPrice(price)}</h4>
+      <h2 className="categoryName">{sub_category_name}</h2>
+      <h4 className="categoryPrice">{numToPrice(price)}</h4>
       <div className="imageWrapper">
         {[...Array(REPEATING_NUNBER)].map(() =>
-          itemsList.map(item => {
+          subCategoryList.map(item => {
             return (
               <Item
-                key={item.id}
-                category={category}
-                image_src={item.image_src}
-                name={item.name}
+                key={item.product_id}
+                id={item.product_id}
+                url={item.images[0].url}
+                krName={item.kr_name}
               />
             );
           })

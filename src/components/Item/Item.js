@@ -1,13 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Item.scss';
 
-function Item({ category, image_src, name }) {
+function Item({ id, url, krName }) {
+  const navigate = useNavigate();
+
+  const goToDetail = () => {
+    navigate(`/detail/${id}`);
+  };
+
   return (
-    <div className="item">
-      <Link to={`/list-${category}`}>
-        <img className="slide" src={image_src} alt={name} />
-      </Link>
+    <div className="item" onClick={goToDetail}>
+      <img className="slide" src={url} alt={krName} />
     </div>
   );
 }

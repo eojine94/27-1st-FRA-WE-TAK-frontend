@@ -49,6 +49,9 @@ function MyPageCartItem({ setGoToOrder }) {
   const miusItemNum = index => {
     fetch(`http://10.58.3.174:8000/orders/carts/${items[index].cart_id}`, {
       method: 'PATCH',
+      headers: {
+        Authorization: localStorage.getItem('access_token'),
+      },
       body: JSON.stringify({
         count: items[index].count - 1,
       }),

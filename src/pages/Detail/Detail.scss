@@ -98,6 +98,10 @@
           color: gray;
         }
 
+        .itemRatting {
+          font-size: 24px;
+        }
+
         .btnAddToCart {
           width: 400px;
           border: 1px solid black;
@@ -149,17 +153,26 @@
     background-color: lightgray;
     line-height: 70px;
     width: 100vw;
+    overflow-y: scroll;
 
     .warning {
-      padding-left: 150px;
+      padding: 0px 50px;
       font-size: 20px;
     }
   }
 
   .imageDescriptionWrapper {
     position: relative;
-    top: 100px;
+    top: 50px;
     width: 1440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: block;
     margin: 0 auto;
+
+    img {
+      width: 90%;
+    }
   }
 }

@@ -7,7 +7,7 @@ import API from '../Config/Config';
 import { LoginData } from './LoginData';
 import './Login.scss';
 
-function Login() {
+function Login({ setIsToken }) {
   const navigate = useNavigate();
 
   const [inputValue, setInputValue] = useState({
@@ -40,11 +40,9 @@ function Login() {
       })
         .then(response => response.json())
         .then(result => {
-          if (result.message) {
-            if (result.token) {
-              console.log(result.token);
-              localStorage.setItem('access_token', result.token);
-            }
+          if (result.message === 'success') {
+            localStorage.setItem('access_token', result.token);
+            setIsToken(true);
             navigate('/');
           } else {
             alert('잘못된 정보입니다!');

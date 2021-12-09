@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Cart from '../Cart/Cart';
 import './Nav.scss';
-function Nav() {
+
+function Nav({ isToken }) {
   const [cartLayout, setCartLayout] = useState(false);
   const openCartMenu = () => {
     setCartLayout(true);
@@ -10,6 +11,7 @@ function Nav() {
   const closeCartMenu = () => {
     setCartLayout(false);
   };
+
   return (
     <>
       <div className="nav">
@@ -37,11 +39,26 @@ function Nav() {
           </Link>
         </ul>
         <ul className="navIcon">
-          <li className="icon">
-            <Link to="/my-page">
-              <i className="fas fa-user" />
-            </Link>
-          </li>
+          {isToken === true ? (
+            <li className="icon">
+              <Link to="/my-page">
+                <i className="fas fa-user" />
+              </Link>
+            </li>
+          ) : (
+            <>
+              <li className="icon">
+                <span>
+                  <Link to="/login">LOGIN</Link>
+                </span>
+              </li>
+              <li className="icon">
+                <span>
+                  <Link to="signup">SIGNUP</Link>
+                </span>
+              </li>
+            </>
+          )}
           <li className="icon" onMouseEnter={openCartMenu}>
             <i className="fas fa-shopping-cart" />
           </li>

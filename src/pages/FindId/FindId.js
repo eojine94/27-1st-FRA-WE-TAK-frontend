@@ -42,7 +42,6 @@ function FindId() {
         .then(res => {
           if (res.result?.[0]) {
             navigate('/print-email', { state: res.result[0] });
-            console.log(res.result[0]);
           } else {
             alert('잘못된 정보입니다!');
           }

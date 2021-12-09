@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav/Nav';
 import Main from './pages/Main/Main';
@@ -11,18 +11,20 @@ import PrintEmail from './pages/PrintEmail/PrintEmail';
 import MyPage from './pages/MyPage/MyPage';
 
 function Router() {
+  const [isToken, setIsToken] = useState(false);
+
   return (
     <BrowserRouter>
-      <Nav />
+      <Nav isToken={isToken} />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login setIsToken={setIsToken} />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/find-id" element={<FindId />} />
         <Route path="/list/:main_category_name" element={<List />} />
         <Route path="/detail/:product_id" element={<Detail />} />
         <Route path="/print-email" element={<PrintEmail />} />
-        <Route path="/my-page" element={<MyPage />} />
+        <Route path="my-page" element={<MyPage setIsToken={setIsToken} />} />
       </Routes>
     </BrowserRouter>
   );

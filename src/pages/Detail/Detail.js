@@ -33,6 +33,8 @@ function Detail() {
       });
   };
 
+  console.log(itemDetail);
+
   return (
     <div className="detail">
       {itemDetail.product_id && (
@@ -99,6 +101,7 @@ function Detail() {
                   <i class="far fa-smile-wink" />
                   {itemDetail.title}
                 </div>
+                <div className="itemRatting">{`${itemDetail.rating} / 10`}</div>
                 <button className="btnAddToCart" onClick={addToCart}>
                   <i class="fas fa-shopping-cart" />
                   &nbsp;&nbsp;&nbsp;ADD TO CART

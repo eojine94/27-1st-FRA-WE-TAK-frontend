@@ -4,6 +4,7 @@ import './PrintEmail.scss';
 
 function PrintEmail() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const goToLogin = () => {
     navigate('/login');

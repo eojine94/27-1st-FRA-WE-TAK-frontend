@@ -22,7 +22,7 @@ function Router() {
         <Route path="/list/:main_category_name" element={<List />} />
         <Route path="/detail/:product_id" element={<Detail />} />
         <Route path="/print-email" element={<PrintEmail />} />
-        <Route path="my-page" element={<MyPage />} />
+        <Route path="/my-page" element={<MyPage />} />
       </Routes>
     </BrowserRouter>
   );

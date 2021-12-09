@@ -22,6 +22,7 @@ function ItemsList({ sub_category_name, price, listData }) {
                 id={item.product_id}
                 url={item.images[0].url}
                 krName={item.kr_name}
+                prev="ItemsList"
               />
             );
           })

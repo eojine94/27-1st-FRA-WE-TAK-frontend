@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import InputContainer from '../InputContainer/InputContainer';
 import ButtonContainer from '../ButtonContainer/ButtonContainer';
-import { ResetPasswordData } from './ResetPasswordData';
 import './ResetPassword.scss';
 
 function ResetPassword() {

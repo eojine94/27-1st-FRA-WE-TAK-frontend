@@ -1,0 +1,165 @@
+@import '../../styles/variables.scss';
+
+.detail {
+  position: relative;
+  top: 100px;
+
+  .classificationWrapper {
+    margin-top: 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+
+    .classification {
+      padding: 0px 150px;
+
+      * {
+        display: inline-block;
+        font-weight: 800;
+        font-size: 15px;
+        margin-right: 5px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  .main {
+    width: 1440px;
+    margin: 0 auto;
+
+    .categoryKorName {
+      margin-bottom: 20px;
+      font-size: 80px;
+      padding-left: 100px;
+      font-family: $korean-font;
+    }
+
+    .categoryNameWrapper {
+      display: flex;
+      margin-bottom: 60px;
+      font-size: 40px;
+      padding-left: 100px;
+
+      * {
+        margin: 10px;
+      }
+    }
+
+    .imageInfoContainer {
+      display: flex;
+      justify-content: flex-start;
+      margin: 20px 10px 0px 10px;
+
+      .imageWrapper {
+        width: 60%;
+
+        * {
+          padding: 50px;
+          width: 50%;
+        }
+      }
+
+      .infoWrapper {
+        width: 30%;
+        margin: 50px 0px 0px 100px;
+
+        * {
+          margin: 12px 0px;
+        }
+
+        .categoryKoreanName {
+          margin: 16px 0px 38px;
+          font-size: 40px;
+          font-weight: 600;
+          font-family: $korean-font;
+        }
+
+        .categoryEnglishName {
+          letter-spacing: 1px;
+        }
+
+        span {
+          font-size: 24px;
+          margin-right: 5px;
+        }
+
+        .price {
+          font-size: 24px
+        }
+
+        .shippingCostDescription {
+          margin-top: 20px;
+          font-size: 15px;
+          color: gray;
+        }
+
+        .btnAddToCart {
+          width: 400px;
+          border: 1px solid black;
+          height: 40px;
+          background-color: black;
+          color: white;
+          font-size: 20px;
+        }
+
+        .fa-palette {
+          margin-right: 10px;
+        }
+
+        .colorDescription {
+          font-size: 18px;
+          letter-spacing: 1.5px;
+        }
+
+        .itemDescription {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 30px;
+          margin-left: -20px;
+          font-size: 18px;
+          font-family: $korean-font;
+        }
+
+        .fa-smile-wink {
+          margin-right: 18px;
+          font-size: 25px;
+        }
+
+        .btnAddToCart {
+          margin-top: 20px;
+          height: 50px;
+        }
+      }
+    }
+
+    img {
+      box-shadow: 0px 0px 20px rgb(145, 142, 142);
+    }
+  }
+
+  .warningWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 180px;
+    width: 1000vh;
+    height: 200px;
+    background-color: lightgray;
+    line-height: 70px;
+    width: 100vw;
+
+    .warning {
+      padding-left: 150px;
+      font-size: 20px;
+    }
+  }
+
+  .imageDescriptionWrapper {
+    position: relative;
+    top: 100px;
+    width: 1440px;
+    margin: 0 auto;
+  }
+}

@@ -3,8 +3,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav/Nav';
 import Main from './pages/Main/Main';
 import Login from './pages/Login/Login';
-import SignUp from './pages/SignUp/SignUp';
+import SignUp from './pages/SignUp/Signup';
 import List from './pages/List/List';
+import Detail from './pages/Detail/Detail';
 import FindId from './pages/FindId/FindId';
 import FindPassword from './pages/FindPassword/FindPassword';
 import ResetPassword from './pages/ResetPassword/ResetPassword';
@@ -19,12 +20,9 @@ function Router() {
         <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/list-chicken" element={<List productName="chicken" />} />
-        <Route
-          path="/list-dinosaur"
-          element={<List productName="dinosaur" />}
-        />
         <Route path="/find-id" element={<FindId />} />
+        <Route path="/list/:main_category_name" element={<List />} />
+        <Route path="/detail/:product_id" element={<Detail />} />
         <Route path="/find-password" element={<FindPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/print-email" element={<PrintEmail />} />

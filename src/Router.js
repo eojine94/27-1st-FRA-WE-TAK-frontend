@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav/Nav';
 import Main from './pages/Main/Main';
 import Login from './pages/Login/Login';
-import SignUp from './pages/SignUp/SignUp';
+import SignUp from './pages/SignUp/Signup';
 import List from './pages/List/List';
 import MyPage from './pages/MyPage/MyPage';
 
@@ -15,11 +15,7 @@ function Router() {
         <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/list-chicken" element={<List productName="chicken" />} />
-        <Route
-          path="/list-dinosaur"
-          element={<List productName="dinosaur" />}
-        />
+        <Route path="/list/:productName" element={<List />} />
         <Route path="my-page" element={<MyPage />} />
       </Routes>
     </BrowserRouter>

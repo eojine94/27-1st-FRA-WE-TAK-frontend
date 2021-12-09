@@ -31,7 +31,9 @@ function Login({ setIsToken }) {
 
   useEffect(() => {
     setIsToken(!!localStorage.getItem('access_token') ? true : false);
-  });
+  }); // useEffect 는 랜더링 될 때 마다 실행되기 때문에 좋지 않음
+  // 로그인 딱 성공될 때 한번 실행하기
+  // fetch .then .then 에서 써주기
 
   return (
     <main className="login">

@@ -7,6 +7,9 @@ function CartItem() {
   useEffect(() => {
     fetch('/data/navbarCartItem.json', {
       method: 'GET',
+      headers: {
+        Authorization: localStorage.getItem('access_token'),
+      },
     })
       .then(response => response.json())
       .then(data => {

@@ -87,6 +87,10 @@
           margin-right: 5px;
         }
 
+        .price {
+          font-size: 24px;
+        }
+
         .shippingCostDescription {
           margin-top: 20px;
           font-size: 15px;
@@ -105,6 +109,7 @@
         .fa-palette {
           margin-right: 10px;
         }
+
         .colorDescription {
           font-size: 18px;
           letter-spacing: 1.5px;
@@ -119,10 +124,12 @@
           font-size: 18px;
           font-family: $korean-font;
         }
+
         .fa-smile-wink {
           margin-right: 18px;
           font-size: 25px;
         }
+
         .btnAddToCart {
           margin-top: 20px;
           height: 50px;

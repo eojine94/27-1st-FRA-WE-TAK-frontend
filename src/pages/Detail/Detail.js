@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import makeSymbolPrice from '../../utils';
+import { Link, useParams } from 'react-router-dom';
+import numToPrice from '../../utils';
 import './Detail.scss';
 
-function Detail({ productName, category }) {
+function Detail() {
+  const { product_id } = useParams();
   const [itemDetail, setItemDetail] = useState([]);
 
   useEffect(() => {
-    fetch('/data/detailData.json', { method: 'GET' })
+    fetch('/data/detailData.json')
       .then(res => res.json())
-      .then(data => setItemDetail(data.result[0]));
-  }, []);
+      .then(data => setItemDetail(data.result));
+  }, [product_id]);
+
+  const result = itemDetail.filter(
+    el => el.product_id === Number(product_id)
+  )[0];
 
   return (
     <div className="detail">
@@ -74,22 +79,6 @@ function Detail({ productName, category }) {
             </button>
           </div>
         </div>
-      </article>
-      <article className="warningWrapper">
-        <p className="warning">
-          Find the secret key. Labyrinth-like adventures A different world from
-          reality. Fantastic digital world. Spread your wings in your heart. I
-          can’t stop like this With shining hope, Let’s get out of the darkness.
-          Even if you fall into a trap somehow, Even if I’m trapped in the waves
-          of crisis, I want to achieve it as I thought. Wherever we go, wherever
-          we go. Digimon friends. (Let’s go, let’s go)
-        </p>
-      </article>
-      <article className="imageDescriptionWrapper">
-        <img
-          src={itemDetail.description_img}
-          alt={itemDetail.description_txt}
-        />
       </article>
     </div>
   );

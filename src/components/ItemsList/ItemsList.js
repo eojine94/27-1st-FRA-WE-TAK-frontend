@@ -1,35 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import makeSymbolPrice from '../../utils';
+import React from 'react';
+import Item from '../Item/Item';
+import numToPrice from '../../utils';
 import './ItemsList.scss';
+const REPEATING_NUNBER = 2;
 
-function ItemsList({ category, price }) {
-  const [itemsList, setItemsList] = useState([]);
-  const repeatingNumber = 3;
-
-  useEffect(() => {
-    fetch('/data/itemListData.json', {
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(data => setItemsList(data));
-  }, []);
+function ItemsList({ sub_category_name, price, listData }) {
+  const subCategoryList = listData.filter(
+    el => el.sub_category_name === `${sub_category_name}`
+  );
 
   return (
     <div className="itemsList">
-      <h2 className="categoryName">{category}</h2>
-      <h4 className="categoryPrice">{makeSymbolPrice(price)}</h4>
+      <h2 className="categoryName">{sub_category_name}</h2>
+      <h4 className="categoryPrice">{numToPrice(price)}</h4>
       <div className="imageWrapper">
-        {[...Array(repeatingNumber)].map(() =>
-          itemsList.map(item => {
+        {[...Array(REPEATING_NUNBER)].map(() =>
+          subCategoryList.map(item => {
             return (
-              <Link to={`/list-${category}`} key={item.id}>
-                <img
-                  className="itemsImage"
-                  src={item.image_src}
-                  alt={item.name}
-                />
-              </Link>
+              <Item
+                key={item.product_id}
+                id={item.product_id}
+                url={item.images[0].url}
+                krName={item.kr_name}
+              />
             );
           })
         )}

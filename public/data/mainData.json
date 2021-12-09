@@ -1,0 +1,69 @@
+{
+  "result": [
+    {
+      "name": "dinosaur",
+      "sub_category_list": [
+        {
+          "id": 6,
+          "kr_name": "백악기",
+          "thumbnail_url": "https://starsportsmall.co.kr/data/rental/goods/middle/imgB_1_20200107pm43039.jpg"
+        },
+        {
+          "id": 7,
+          "kr_name": "신석기",
+          "thumbnail_url": "http://image.auction.co.kr/itemimage/18/f3/b8/18f3b8bb76.jpg"
+        },
+        {
+          "id": 8,
+          "kr_name": "구석기",
+          "thumbnail_url": "http://moltenkorea.co.kr/web/product/big/201705/86_shop1_813183.jpg"
+        },
+        {
+          "id": 9,
+          "kr_name": "중석기",
+          "thumbnail_url": "https://contents.lotteon.com/itemimage/LD/49/85/18/93/1_/0/LD498518931_0_3.jpg/dims/resizef/720X720"
+        },
+        {
+          "id": 10,
+          "kr_name": "포켓몬스터",
+          "thumbnail_url": "https://lh3.googleusercontent.com/proxy/fEUWbtiuza-ywEMRmr_51RL6vGDaQmUJatY4jYWf0zDIASMtu4V7hJrzGb4ZbjL1-Qt8brI59Qf9RcVCe_IXDV7nsQLBkK07taXscXBzDBa_Hth2e8HD8MI4SuVqjxA_ffyd-bucFYzmdrvWGgDEpLf2uHwBVCgZw7kWUg"
+        },
+        {
+          "id": 11,
+          "kr_name": "디지몬",
+          "thumbnail_url": "https://pbs.twimg.com/media/EF8hpn6UEAEtUVI.png"
+        }
+      ]
+    },
+    {
+      "name": "chicken",
+      "sub_category_list": [
+        {
+          "id": 1,
+          "kr_name": "유정란",
+          "thumbnail_url": "https://blog.kakaocdn.net/dn/7zbcK/btqxdRyJtMo/5kVEGPO0464iRzq3Ou7tj1/img.png"
+        },
+        {
+          "id": 2,
+          "kr_name": "맥반석 계란",
+          "thumbnail_url": "http://m.tastyfood.co.kr/web/product/big/201805/164_shop1_707894.jpg"
+        },
+        {
+          "id": 3,
+          "kr_name": "클로렐라란",
+          "thumbnail_url": "https://png.pngtree.com/png-vector/20210121/ourlarge/pngtree-3d-green-egg-with-circle-png-image_2772221.jpg"
+        },
+        {
+          "id": 4,
+          "kr_name": "청계란",
+          "thumbnail_url": "https://previews.123rf.com/images/issumbosi/issumbosi1608/issumbosi160800018/61725544-vector-blaues-ei-shiny-metallic-blau-osterei-symbol-auf-wei%C3%9Fem-hintergrund-.jpg"
+        },
+        {
+          "id": 5,
+          "kr_name": "머머리란",
+          "thumbnail_url": "https://blog.kakaocdn.net/dn/cMmXoB/btqDp200P63/33JKhs4oUT1KkplW7VaCsk/img.jpg"
+        }
+      ]
+    }
+  ]
+}

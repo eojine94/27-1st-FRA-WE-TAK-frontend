@@ -40,7 +40,6 @@ function FindId() {
       })
         .then(response => response.json())
         .then(result => {
-          console.log(result);
           if (result.message) {
             navigate('/login');
           } else {
@@ -49,7 +48,6 @@ function FindId() {
         });
     }
   };
-  console.log(inputValue);
   return (
     <main className="findId">
       <div className="findIdTop">

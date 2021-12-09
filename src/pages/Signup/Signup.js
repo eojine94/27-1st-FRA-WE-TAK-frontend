@@ -75,7 +75,6 @@ function SignUp() {
         });
     }
   };
-  console.log(inputValue);
   return (
     <main className="signUp">
       <div className="signUpTop">

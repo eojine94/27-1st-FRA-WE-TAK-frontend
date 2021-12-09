@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.scss';
 
-function Login() {
+function Login({ setIsToken }) {
   const [inputValue, setInputValue] = useState({
     email: '',
     password: '',
@@ -28,6 +28,10 @@ function Login() {
       alert('please write a password or email address');
     }
   };
+
+  useEffect(() => {
+    setIsToken(!!localStorage.getItem('access_token') ? true : false);
+  });
 
   return (
     <main className="login">

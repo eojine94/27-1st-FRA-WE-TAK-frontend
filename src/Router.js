@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav/Nav';
 import Main from './pages/Main/Main';
@@ -8,12 +8,14 @@ import List from './pages/List/List';
 import MyPage from './pages/MyPage/MyPage';
 
 function Router() {
+  const [isToken, setIsToken] = useState(false);
+
   return (
     <BrowserRouter>
-      <Nav />
+      <Nav isToken={isToken} />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login setIsToken={setIsToken} />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/list-chicken" element={<List productName="chicken" />} />
         <Route

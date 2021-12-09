@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Cart from '../Cart/Cart';
 import './Nav.scss';
 
-function Nav() {
+function Nav({ isToken }) {
   const [cartLayout, setCartLayout] = useState(false);
 
   const openCartMenu = () => {
@@ -12,18 +12,6 @@ function Nav() {
 
   const closeCartMenu = () => {
     setCartLayout(false);
-  };
-
-  const isToken = localStorage.getItem('access_token');
-  const navigate = useNavigate();
-
-  const goToMyPage = () => {
-    if (!!isToken) {
-      navigate('/my-page');
-    } else {
-      alert('로그인 해주세요');
-      navigate('/login');
-    }
   };
 
   return (
@@ -53,9 +41,24 @@ function Nav() {
           </Link>
         </ul>
         <ul className="navIcon">
-          <li className="icon">
-            <i className="fas fa-user" onClick={goToMyPage} />
-          </li>
+          {isToken === true ? (
+            <li className="icon">
+              <i className="fas fa-user" />
+            </li>
+          ) : (
+            <>
+              <li className="icon">
+                <span>
+                  <Link to="/login">LOGIN</Link>
+                </span>
+              </li>
+              <li className="icon">
+                <span>
+                  <Link to="signup">SIGNUP</Link>
+                </span>
+              </li>
+            </>
+          )}
           <li className="icon" onMouseEnter={openCartMenu}>
             <i className="fas fa-shopping-cart" />
           </li>

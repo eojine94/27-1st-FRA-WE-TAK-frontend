@@ -5,10 +5,10 @@ function MyPageCartItem({ setGoToOrder }) {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch('/data/cartItem.json', {
+    fetch('http://10.58.3.174:8000/orders/carts', {
       method: 'GET',
       headers: {
-        Authorization: localStorage.getItem('token'),
+        Authorization: localStorage.getItem('access_token'),
       },
     })
       .then(res => res.json())
@@ -20,10 +20,10 @@ function MyPageCartItem({ setGoToOrder }) {
   const plusItemNum = index => {
     // http://10.58.1.28:8000/orders/carts/${items[index].cart_id} 밑에 써줘야 할 것
 
-    fetch(`/data/cartItem.json`, {
+    fetch(`http://10.58.3.174:8000/orders/carts/${items[index].cart_id}`, {
       method: 'PATCH',
       headers: {
-        Authorization: localStorage.getItem('token'),
+        Authorization: localStorage.getItem('access_token'),
       },
       body: JSON.stringify({
         count: items[index].count + 1,
@@ -47,7 +47,7 @@ function MyPageCartItem({ setGoToOrder }) {
   };
 
   const miusItemNum = index => {
-    fetch(`/data/cartItem.json`, {
+    fetch(`http://10.58.3.174:8000/orders/carts/${items[index].cart_id}`, {
       method: 'PATCH',
       body: JSON.stringify({
         count: items[index].count - 1,
@@ -71,10 +71,10 @@ function MyPageCartItem({ setGoToOrder }) {
   };
 
   const deleteItem = index => {
-    fetch(`/data/cartItem.json`, {
+    fetch(`http://10.58.3.174:8000/orders/carts/${items[index].cart_id}`, {
       method: 'DELETE',
       headers: {
-        Authorization: localStorage.getItem('token'),
+        Authorization: localStorage.getItem('access_token'),
       },
     }).then(res => {
       res.status === 204

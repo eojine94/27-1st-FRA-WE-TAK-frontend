@@ -8,14 +8,14 @@ function List() {
   const [listData, setListData] = useState([]);
 
   useEffect(() => {
-    fetch(`/data/listData.json`)
+    fetch(`http://10.58.3.174:8000/products`)
       .then(res => res.json())
       .then(data => setListData(data.result));
   }, [main_category_name]);
 
   // listData 안에서 useParams()로 받은 main_category_name과 동일한 값을 mainCategoryList 안에 저장.
   const mainCategoryList = listData.filter(
-    el => el.main_category_name === `${main_category_name}`
+    el => el.main_category_name.toLowerCase() === `${main_category_name}`
   );
   // mainCategoryList 안에서 sub_category_id를 기준으로 중복 제거.
   // 그럼 sub_category_id 별로 하나씩만 남겠지 그걸 subCategoryList에 저장

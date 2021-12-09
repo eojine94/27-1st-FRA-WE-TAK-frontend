@@ -15,17 +15,19 @@ function MyPage() {
   };
 
   useEffect(() => {
+    if (!localStorage.getItem('access_token')) navigate('/login');
+
     fetch('/data/cartItem.json', {
       method: 'GET',
       headers: {
-        Authorization: localStorage.getItem('token'),
+        Authorization: localStorage.getItem('access_token'),
       },
     })
       .then(res => res.json())
       .then(data => {
         setUserProfiles(data.cart_items[0]);
       });
-  }, []);
+  }, [navigate]);
 
   return (
     <div className="mypage">

@@ -26,7 +26,7 @@ function Router() {
         <Route path="/find-password" element={<FindPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/print-email" element={<PrintEmail />} />
-        <Route path="my-page" element={<MyPage />} />
+        <Route path="/my-page" element={<MyPage />} />
       </Routes>
     </BrowserRouter>
   );

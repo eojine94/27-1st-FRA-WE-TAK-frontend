@@ -5,21 +5,37 @@ import './Detail.scss';
 
 function Detail() {
   const { product_id } = useParams();
-  const [itemDetail, setItemDetail] = useState([]);
+  const [itemDetail, setItemDetail] = useState({});
 
   useEffect(() => {
-    fetch('/data/detailData.json')
+    fetch(`http://10.58.3.174:8000/products/${product_id}`)
       .then(res => res.json())
-      .then(data => setItemDetail(data.result));
+      .then(data => {
+        setItemDetail(data.result);
+      });
   }, [product_id]);
 
-  const result = itemDetail.filter(
-    el => el.product_id === Number(product_id)
-  )[0];
+  const addToCart = () => {
+    fetch('http://10.58.3.174:8000/orders/carts', {
+      method: 'POST',
+      headers: {
+        Authorization: localStorage.getItem('access_token'),
+      },
+      body: JSON.stringify({
+        product_id,
+        count: 1,
+      }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        data.message === 'SUCCESS' &&
+          alert('장바구니에 정상적으로 담겼습니다.');
+      });
+  };
 
   return (
     <div className="detail">
-      {result && (
+      {itemDetail.product_id && (
         <div>
           <header className="classificationWrapper">
             <ul className="classification">
@@ -31,9 +47,9 @@ function Detail() {
                 {'>'}
               </li>
               <li>
-                <Link to={`/list/${result.sub_category_en_name}`}>
-                  {result.sub_category_en_name &&
-                    result.sub_category_en_name.toUpperCase()}
+                <Link to={`/list/${itemDetail.sub_category_en_name}`}>
+                  {itemDetail.sub_category_en_name &&
+                    itemDetail.sub_category_en_name.toUpperCase()}
                 </Link>
               </li>
               <li>
@@ -41,20 +57,22 @@ function Detail() {
                 {'>'}
               </li>
               <li>
-                <Link to={`/detail/${result.product_id}`}>
-                  {result.en_name && result.en_name.toUpperCase()}
+                <Link to={`/detail/${itemDetail.product_id}`}>
+                  {itemDetail.en_name && itemDetail.en_name.toUpperCase()}
                 </Link>
               </li>
             </ul>
           </header>
           <article className="main">
-            <div className="categoryKorName">{result.sub_category_kr_name}</div>
+            <div className="categoryKorName">
+              {itemDetail.sub_category_kr_name}
+            </div>
             <div className="categoryNameWrapper">
               <span className="categoryEngName">
-                {result.sub_category_en_name}
+                {itemDetail.sub_category_en_name}
               </span>
               <div className="price">
-                {result.price && numToPrice(result.price)}
+                {itemDetail.price && numToPrice(itemDetail.price)}
               </div>
             </div>
             <div className="imageInfoContainer">
@@ -62,24 +80,26 @@ function Detail() {
                 {[...Array(4)].map(() => (
                   <img
                     className="descriptionImage"
-                    key={result.product_id}
-                    src={result.images[0].url}
-                    alt={result.kr_name}
+                    key={itemDetail.product_id}
+                    src={itemDetail.images[0].url}
+                    alt={itemDetail.kr_name}
                   />
                 ))}
               </div>
               <div className="infoWrapper">
-                <div className="categoryKoreanName">{result.kr_name}</div>
-                <span className="categoryEnglishName">{result.en_name}</span>
+                <div className="categoryKoreanName">{itemDetail.kr_name}</div>
+                <span className="categoryEnglishName">
+                  {itemDetail.en_name}
+                </span>
                 <div className="price">
-                  {result.price && numToPrice(result.price)}
+                  {itemDetail.price && numToPrice(itemDetail.price)}
                 </div>
                 <h4 className="shippingCostDescription">excl shipping cost</h4>
                 <div className="itemDescription">
                   <i class="far fa-smile-wink" />
-                  {result.description_txt}
+                  {itemDetail.title}
                 </div>
-                <button className="btnAddToCart">
+                <button className="btnAddToCart" onClick={addToCart}>
                   <i class="fas fa-shopping-cart" />
                   &nbsp;&nbsp;&nbsp;ADD TO CART
                 </button>
@@ -98,7 +118,10 @@ function Detail() {
             </p>
           </article>
           <article className="imageDescriptionWrapper">
-            <img src={result.description_img} alt={result.description_txt} />
+            <img
+              src={itemDetail.description_img}
+              alt={itemDetail.description_txt}
+            />
           </article>
         </div>
       )}

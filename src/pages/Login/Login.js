@@ -41,9 +41,11 @@ function Login() {
         .then(response => response.json())
         .then(result => {
           if (result.message) {
+            if (result.token) {
+              console.log(result.token);
+              localStorage.setItem('access_token', result.token);
+            }
             navigate('/');
-          } else if (result.access_token) {
-            localStorage.setItem('access_token', result.access_token);
           } else {
             alert('잘못된 정보입니다!');
           }

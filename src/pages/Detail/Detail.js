@@ -61,6 +61,7 @@ function Detail() {
               <div className="imageWrapper">
                 {[...Array(4)].map(() => (
                   <img
+                    className="descriptionImage"
                     key={result.product_id}
                     src={result.images[0].url}
                     alt={result.kr_name}

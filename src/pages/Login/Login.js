@@ -71,9 +71,11 @@ function Login({ setIsToken }) {
             );
           })}
 
-          <span className="forgotIDPassword line">
-            Forgot your ID or password?
-          </span>
+          <Link to="/find-id">
+            <span className="forgotIDPassword line">
+              Forgot your ID or password?
+            </span>
+          </Link>
         </form>
       </div>
       <div className="loginBottom">

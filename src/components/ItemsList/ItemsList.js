@@ -2,7 +2,7 @@ import React from 'react';
 import Item from '../Item/Item';
 import numToPrice from '../../utils';
 import './ItemsList.scss';
-const REPEATING_NUNBER = 2;
+const REPEATING_NUNBER = 5;
 
 function ItemsList({ sub_category_name, price, listData }) {
   const subCategoryList = listData.filter(

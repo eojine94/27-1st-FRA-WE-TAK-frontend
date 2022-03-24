@@ -2,6 +2,8 @@
 World's best eco-friendly chicken egg or dinosour egg, FRA-WE-TAK
 다양한 종류의 계란을 전시 및 판매하는 사이트 입니다 :)
 
+<a href='https://www.youtube.com/watch?v=Uh1NVbEVGbQ'>시현영상</a>
+
 
 ## 개발기간
 : 2021/11/29~2021/12/10
